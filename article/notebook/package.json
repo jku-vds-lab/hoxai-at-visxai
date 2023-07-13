@@ -1,0 +1,14 @@
+{
+  "name": "@infovis2023/observable-tutorial-part-i",
+  "main": "4106a348af5a564c@555.js",
+  "version": "555.0.0",
+  "homepage": "https://observablehq.com/@infovis2023/observable-tutorial-part-i",
+  "author": {
+    "name": "infovis2023",
+    "url": "https://observablehq.com/@infovis2023"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}

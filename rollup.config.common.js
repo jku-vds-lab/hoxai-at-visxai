@@ -24,7 +24,7 @@ const defaultConfig = {
   plugins: [
     resolve({
       jsnext: true,
-      browser: true
+      browser: true,
     }),
     commonjs(),
     string({
