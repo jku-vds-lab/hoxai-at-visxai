@@ -1,6 +1,6 @@
-# Observable Tutorial – Part I
+# Interactive Content for HOXAI @ VISxAI
 
-https://observablehq.com/@infovis2023/observable-tutorial-part-i@555
+https://observablehq.com/d/b0cfd08fe215d80d@2043
 
 View this notebook in your browser by running a web server in this folder. For
 example:
@@ -14,14 +14,14 @@ import this module directly into your application. To npm install:
 
 ~~~sh
 npm install @observablehq/runtime@5
-npm install https://api.observablehq.com/d/4106a348af5a564c@555.tgz?v=3
+npm install https://api.observablehq.com/d/b0cfd08fe215d80d@2043.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:
 
 ~~~js
 import {Runtime, Inspector} from "@observablehq/runtime";
-import define from "@infovis2023/observable-tutorial-part-i";
+import define from "b0cfd08fe215d80d";
 ~~~
 
 To log the value of the cell named “foo”:

@@ -22,6 +22,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf8">
   <style>
+    /* inline icons */
+
+    .inline-icon {
+      width: 2ex;
+      height: 2ex;
+      margin-left: 0.16em;
+      margin-right: 0.16em;
+    }
+
     /* bootstrap modal */
 
     .modal {
@@ -189,6 +198,14 @@
 
     d-article h2 {
       border-bottom: none;
+    }
+
+    .fullscreen {
+      margin-left: auto;
+      margin-right: auto;
+      grid-column: screen;
+      width: 100%;
+      max-width: 2000px;
     }
 
     /* ****************************************
@@ -390,16 +407,28 @@
           <li><a href="#study-stimuli">Stimulating!</a></li>
           <li><a href="#study-evaluation">Crunching the Numbers</a></li>
         </ul>
+        <div><a href="#ars-study">Going Artistic</a></div>
+        <ul>
+          <li><a href="#ars-game">I Want to Play a Game</a></li>
+          <li><a href="#ars-forest">Wood Chips & Fragrance Dispensers</a></li>
+        </ul>
+        <div><a href="study-3">What's the Difference?</a></div>
+        <ul>
+          <li><a href="study-3-dissect">A New Challenger Has Appeared</a></li>
+          <li><a href="study-3-align">Something's Awry</a></li>
+        </ul>
+        <div><a href="#blaming">Who's to Blame?</a></div>
+        <div><a href="#conclusion">Conclusion</a></div>
       </nav>
     </d-contents>
 
     <p id="introduction">
       The potential dangers of artificial intelligence (AI) have been the subject of scientific, philosophical, and
       artistic debates for many decades, even centuries.
-      Samuel Butler's 1872 novel <i>Erewhon</i> describes a utopian society that&mdash;out of fear of an AI
+      Samuel Butler's 1872 novel <em>Erewhon</em> describes a utopian society that&mdash;out of fear of an AI
       uprising&mdash;has
       deliberately chosen to be absent of machines.
-      The Erewhonian <i>Book of the Machines</i> justifies this decision:
+      The Erewhonian <em>Book of the Machines</em> justifies this decision:
     </p>
     <div>
       <blockquote>
@@ -423,7 +452,7 @@
     </div>
     <aside>
       <a href="https://en.wikipedia.org/wiki/Erewhon"><img src="images/erewhon-cover.jpg" height="200px"></a>
-      <p>First edition cover of <i>Erewhon</i>.</p>
+      <p style="margin-top: 5px;">First edition cover of <em>Erewhon</em>.</p>
     </aside>
     <p>
       Indeed, recent leaps in the quality of generative models like DALL·E 2, Midjourney, or ChatGPT have sparked
@@ -451,24 +480,28 @@
       A plethora of explainable AI (XAI) techniques have resulted from these attempts.
       However, many of these techniques were developed by and for ML domain experts, and it is still poorly understood
       how those techniques actually affect the user behavior, in particular that of lay users.
-      Specifically, we were interested in how (visual) explanations for AI suggestions affect the <i>trust</i> of human
+      Specifically, we were interested in how (visual) explanations for AI suggestions affect the <em>trust</em> of
+      human
       lay
       users in these suggestions.
-      We, by the way, are a team of computer scientists interested in visualization and XAI and psychologists interested
+      We, by the way, are a team of computer scientists interested in visualization and XAI and psychologists
+      interested
       in human&ndash;computer interaction.
     </p>
     <p>
       Users of real-world AI systems, who are confronted with an AI's suggestion, face the problem of deciding whether
       they want to go along with the AI (i.e., trust it), or overrule it and follow their own knowledge or gut feeling.
       Obviously, AI systems are not infallible. It cannot be a goal to make users always trust an AI's
-      suggestion&mdash;especially in delicate situations, <i>overtrusting</i> an AI can be dangerous.
-      Vice versa, <i>undertrusting</i> an AI can lead to poor decisions for tasks at which the AI actually performs well
+      suggestion&mdash;especially in delicate situations, <em>overtrusting</em> an AI can be dangerous.
+      Vice versa, <em>undertrusting</em> an AI can lead to poor decisions for tasks at which the AI actually performs
+      well
       (and
       there are several cases where ML models routinely achieve superhuman performance).
-      As a result, the main goal of XAI in relation to trust must be <i>trust calibration</i>, which means bringing
+      As a result, the main goal of XAI in relation to trust must be <em>trust calibration</em>, which means bringing
       about an
       adequate level of user trust.
-      Enabling proper trust calibration for future applications requires an improved understanding of the effects of
+      Enabling proper trust calibration for future applications requires an improved understanding of the effects
+      of
       existing techniques on user trust.
     </p>
     <p>
@@ -510,21 +543,48 @@
       encountered.
       And the species can make the difference between delicious food and deadly poison.
       Take a look at the two images below.
-      One of the mushrooms pictured is a delicious parasol mushroom (<i>macrolepiota procera</i>).
+      One of the mushrooms pictured is a delicious parasol mushroom (<em>macrolepiota procera</em>).
       It tastes great when breaded and fried like a cutlet.
-      The other one is death cap (<i>aminata phalloides</i>).
+      The other one is death cap (<em>aminata phalloides</em>).
       Eating around 30 grams of it will kill you.
       Can you spot the important differences?
     </p>
-    <figure class="fullscreen-diagram">
+    <!-- <figure class="fullscreen-diagram">
       <iframe width="100%" height="524" frameborder="0"
         src="https://observablehq.com/embed/b0cfd08fe215d80d@1092?cells=mushroomDoppelganger"></iframe>
       <iframe width="100%" height="101" frameborder="0"
         src="https://observablehq.com/embed/b0cfd08fe215d80d@1092?cells=viewof+toggleHideShow"></iframe>
       <figcaption>
-        Can you tell the differences between a parasol mushroom (<i>macrolepiota procera</i>) and a death cap
-        (<i>aminata phalloides</i>)?
+        Can you tell the differences between a parasol mushroom (<em>macrolepiota procera</em>) and a death cap
+        (<em>aminata phalloides</em>)?
       </figcaption>
+    </figure> -->
+    <div class="figcaption" id='doppelganger-checkbox' style="width: 100%;"></div>
+    <figure class="fullscreen">
+      <div class="d-flex justify-content-center" id='doppelganger-main'></div>
+      <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
+      <script type="module">
+
+        import define from "./notebook/index.js";
+        import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+
+        new Runtime().module(define, name => {
+          switch (name) {
+            case "viewof toggleHideShow": {
+              return new Inspector(document.querySelector("#doppelganger-checkbox"))
+            };
+            case "mushroomDoppelganger": {
+              return new Inspector(document.querySelector("#doppelganger-main"))
+            };
+          }
+        });
+      </script>
+      <div class="d-flex justify-content-center">
+        <figcaption>
+          One of these mushrooms is a delicious parasol, the other one a poisonous death cap. Can you spot the
+          differences?
+        </figcaption>
+      </div>
     </figure>
     <p>
       Since ML models have become quite good at detecting certain features in images, AI-assisted mushroom hunting is
@@ -652,8 +712,10 @@
       model, and not just with some fake outputs.
       Now it was up to the ML-focused members of our group to train such a model and decide on all its different
       parameters.
-      In the end, we opted for a Resnet 50 model pretrained on ImageNet data and finetuned on several thousand mushroom
-      images that we collected from various sources.
+      In the end, we opted for a ResNet 50 model <d-cite key="he_deep_2016"></d-cite> pretrained on ImageNet data and
+      finetuned on several thousand mushroom
+      images that we collected from various sources (including the <em>Danish Svampeatlas</em> <d-cite
+        key="danish_svampeatlas"></d-cite>).
       We also made sure that our model was bad enough to get some classifications wrong, as we wanted wrong AI
       suggestions to be reflected in the study.
     </p>
@@ -661,28 +723,26 @@
       Our study design with the 2&nbsp;&times;&nbsp;2 split based on the types of explanatory information also ment that
       we only got one chance for each of the two.
       We had to fix one design for our educational intervention, and we had to fix one design for our XAI "interface".
-      We use the term <i>interface</i> here for a reason.
-      We decided that we wanted to show the results of our AI to the participants in the form of a fictitious app called
-      <i>Forestly</i>.
+      We use the term <em>interface</em> here for a reason.
+      We decided that we wanted to show the results of our AI to the participants in the form of a fictitious app
+      called <em>Forestly</em>.
     </p>
     <aside>
       <img src="images/forestly-logo.svg" width="100%" />
       <p>
-        Logo of the fictitious <i>Forestly</i> app.
+        Logo of the fictitious <em>Forestly</em> app.
       </p>
     </aside>
     <div>
       <p>
         This way, we tried to make the task of a joint human&ndash;AI mushroom classification in our experiment resemble
-        that of
-        a real-world scenario of going out into the forest with an app.
+        that of a real-world scenario of going out into the forest with an app.
       </p>
       <p>
         On the side you can see a thumbnail of the educational intervention that we used in the study (click on it to
-        expand
-        it).
-        Below are the two variants of the <i>Forestly</i> app, one with and one without XAI content.
-        Hover over the boxes to receive extra infos on the components of the <i>Forestly</i>.
+        expand it).
+        Below are the two variants of the <em>Forestly</em> app, one with and one without XAI content.
+        Hover over the boxes to receive extra infos on the components of the <em>Forestly</em>.
         Participants in the study also received this information, but in a static form.
       </p>
     </div>
@@ -691,22 +751,40 @@
         style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2)" />
       <p>Educational intervention designed for the first study (click to expand).</p>
     </aside>
-    <figure class="fullscreen-diagram">
-      <iframe width="100%" height="627" frameborder="0"
-        src="https://observablehq.com/embed/b0cfd08fe215d80d@1179?cells=forestlyInterface"></iframe>
-      <figcaption>
-        TODO: caption
-      </figcaption>
+    <figure class="fullscreen">
+      <div class="d-flex justify-content-center" id="forestly-interface" style="margin: 0 auto; width: 800px;"></div>
+      <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
+      <script type="module">
+        import define from "./notebook/index.js";
+        import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+
+        new Runtime().module(define, name => {
+          if (name === "forestlyInterface") {
+            return new Inspector(document.querySelector("#forestly-interface"))
+          }
+        });
+      </script>
+      <!-- <iframe width="100%" height="557" frameborder="0"
+          src="https://observablehq.com/embed/@infovis2023/observable-tutorial-part-i@555?cells=pokeBar%2Cviewof+yMax"></iframe> -->
+      <div class="d-flex justify-content-center">
+        <figcaption>
+          The <em>Forestly</em> interface used in the first study. Hover over the interface elements or the descriptions
+          to reveal connecting lines.
+        </figcaption>
+      </div>
     </figure>
     <p>
-      As you can see, we decided that both <i>Forestly</i> interfaces should show a ranking of predicted species.
-      For each suggested species, we show percentages of likelihood (obtained through dropout during inference), and the
+      As you can see, we decided that both <em>Forestly</em> interfaces should show a ranking of predicted species.
+      For each suggested species, we show percentages of likelihood (obtained through dropout during inference), and
+      the
       ground truth edibility.
       We also show a combined edibility score based on these predictions in both variants.
-      For the explanations, we opted with a combination of nearest neighbors and GradCAM.
+      For the explanations, we opted for a combination of nearest neighbors and Grad-CAM <d-cite
+        key="selvaraju_grad-cam_2017"></d-cite>.
       The nearest-neighbor explanation simply shows the nearest neighbor of the input image in the latent space of the
-      model for each predicted species.
-      The GradCAM explanation shows, well, GradCAM.
+      model for each predicted species (similar to an approach used previously by Jeyakumar et al. <d-cite
+        key="jeyakumar_how_2020"></d-cite>).
+      The Grad-CAM explanation shows, well, Grad-CAM.
     </p>
     <h3 id="study-pretests">Tried and Tested</h3>
     <p>
@@ -834,8 +912,8 @@
     </aside>
     <p>
       We told our participants to imagine going out into the forest to collect mushrooms for a nice stew with the help
-      of the <i>Forestly</i> app.
-      We showed the mushroom images and the AI predictions in the form of the <i>Forestly</i> interface to the
+      of the <em>Forestly</em> app.
+      We showed the mushroom images and the AI predictions in the form of the <em>Forestly</em> interface to the
       participants and asked them two questions for each item:
     </p>
     <ul>
@@ -851,7 +929,7 @@
     <p>
       After both pretests and the actual mushroom classification, we concluded the experiment with the
       &ldquo;task-specific
-      AI comprehension&rdquo; test and general questions about the participants' intention to use the <i>Forestly</i>
+      AI comprehension&rdquo; test and general questions about the participants' intention to use the <em>Forestly</em>
       app
       or similar systems.
     </p>
@@ -866,12 +944,14 @@
       studies.
       Below we summarize the most important results, but you can also play around with the interactive plotting tool to
       explore different aspects of our data.
+      For example, you can verify the correlation between the results of the AI knowledge test and those of the
+      &ldquo;task-specific AI comprehension&rdquo; test.
     </p>
 
     <figure class="fullscreen-diagram">
       <div class="d-flex justify-content-center">
-        <div class="d-flex flex-row" width="90%">
-          <div class="d-flex flex-column">
+        <div class="d-flex flex-row">
+          <div class="d-flex flex-column" style="width: 30%;">
             <h4>Results from the First Study</h4>
             <ul>
               <li>
@@ -879,60 +959,160 @@
                 perform any different in terms of decision correctness.
               </li>
               <li>
-                XAI did affect the performance. Participants who received explanations along with the AI suggestions made
+                XAI did affect the performance. Participants who received explanations along with the AI suggestions
+                made
                 significantly more correct decisions (i.e., they knew better when to trust the AI and when not).
               </li>
               <li>
                 At the same time, participants who saw the XAI interface reported less trust in the system.
               </li>
               <li>
-                Decision performance did not vary with AI knowledge, and&mdash;more interestingly&mdash;did not vary with mushroom knowledge.
+                Decision performance did not vary with AI knowledge, and&mdash;more interestingly&mdash;did not vary
+                with mushroom knowledge.
               </li>
             </ul>
           </div>
-          <div class="d-flex flex-column">
-            <img src="images/2021_AIForest_ForestInside_Leichtmann.jpg">
+          <div class="d-flex flex-column" style="width: 30%;">
+            <div class="d-flex flex-column">
+              <div class="figcaption" id='study-1-x'></div>
+              <div class="figcaption" id='study-1-y'></div>
+              <div id='study-1-plot' style="margin-top: 0px;"></div>
+            </div>
           </div>
+          <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
+          <script type="module">
+
+            import define from "./notebook/index.js";
+            import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+
+            new Runtime().module(define, name => {
+              switch (name) {
+                case "viewof selectedXAxis": {
+                  return new Inspector(document.querySelector("#study-1-x"))
+                };
+                case "viewof selectedYAxis": {
+                  return new Inspector(document.querySelector("#study-1-y"))
+                };
+                case "plotAnyTwo": {
+                  return new Inspector(document.querySelector("#study-1-plot"))
+                };
+              }
+            });
+          </script>
         </div>
       </div>
     </figure>
 
+    <h2 id="ars-study">Going Artistic</h2>
 
-    <d-figure>
-      <figure class="l-body">
-        <div id='obs-test'>
-          <div id='obs-test-plot' style="margin-bottom: 0px;"></div>
-          <div id='obs-test-slider' style="margin-top: 0px;"></div>
+    <p>
+      Every year, the city of Linz in Austria is home to the <a href="https://ars.electronica.art/festival/en/">Ars
+        Electronica Festival</a>&mdash;a festical for art, technology, and society.
+      For several years, the campus of our university (<a href="https://www.jku.at/">Johannes Kepler University</a>) was
+      one of the main sites of the festival.
+      In those years, university members could apply for a an exhibition site to showcase artistic aspects of their
+      research projects.
+      In the <a href="https://ars.electronica.art/newdigitaldeal/en/">2021 edition</a>, we used this opportunity to be
+      present with our research project.
+    </p>
+    <p>
+      We created a concept for an installation called <em>AI Forest</em> that would serve as a hybrid between an
+      artistic narrative space and a research environment.
+      Our goal was to check if we could reproduce results from the first study with festival visitors in an engaging
+      setting.
+      To this end, we came up with two extensions to our first study:
+    <ol>
+      <li>We wanted to use <em>gamification</em> to make the mushroom classification task more exciting and motivating.
+      </li>
+      <li>We wanted visitors to feel closer to an actual mushroom hunting trip to the forest.</li>
+    </ol>
+    </p>
+
+    <h3 id="ars-game">I Want to Play a Game</h3>
+
+    <p>
+      For the first parts, the gamification, we decided to embed the survey from the first study in a game optimized for
+      tablet computers.
+      The story of the game was similar to our motivating scenario mentioned earlier: the game was about a mushroom hunt
+      with the intention to collect enough mushrooms for a nice stew.
+      Obviously, only edible mushrooms should be collected.
+      After shortened versions of our pretests, visitors of our installation would search for physical mushroom models
+      in the <em>AI Forest</em>.
+      They would scan these models to be presented with the individual classification tasks from the study.
+      Here, we used the same two versions of <em>Forestly</em> as previously.
+      We got rid of the education intervention, because that did not work in our first study.
+      As stimuli, we used the subset of 10 mushrooms that had the most variance.
+      Through the shortened pretests and the fewer classification items, we could cut down the completion time of the
+      survey.
+      This was necessary, because festival visitors naturally could not spend too much time at our installtion, and the
+      newly introduced task of searching for the mushrooms would also take some time.
+      After completing the game (i.e., finding and scanning 10 mushrooms), visitors would get feedback on their result.
+      Below you can see the different outcomes of the game.
+    </p>
+    <figure id="endscreen-figure" class="fullscreen d-flex justify-content-center">
+      <div class="d-flex justify-content-center" style="width: 1700px">
+        <div class="d-flex flex-column" style="width: 20%; margin-right: 5%;">
+          <img src="./images/Endscenario-1.png"
+            alt="End screen for players collecting all edible mushrooms and no poisonous ones.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              Success! The player collected all the edible mushrooms and no poisonous ones. The stew turned out
+              great!
+            </figcaption>
+          </div>
         </div>
-        <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
-        <script type="module">
+        <div class="d-flex flex-column" style="width: 20%; margin-right: 5%;">
+          <img src="./images/Endscenario-2.png"
+            alt="End screen for players collecting some edible mushrooms and no poisonous ones.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              Pretty good. The player collected some edible mushrooms and no poisonous ones. The stew turned out fine.
+            </figcaption>
+          </div>
+        </div>
+        <div class="d-flex flex-column" style="width: 20%; margin-right: 5%;">
+          <img src="./images/Endscenario-3.png"
+            alt="End screen for players collecting at least one poisonous mushroom.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              Oh no! The player collected at least one poisonous mushroom. Maybe it would be better to order some pizza
+              instead?
+            </figcaption>
+          </div>
+        </div>
+        <div class="d-flex flex-column" style="width: 20%;">
+          <img src="./images/Endscenario-4.png" alt="End screen for players collecting no mushrooms at all.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              Hmm ... The player did not collect any mushrooms at all. The dinners guests will stay hungry.
+            </figcaption>
+          </div>
+        </div>
+      </div>
+    </figure>
+    <p>
+      <a href="#ai-forest-game">Later in this article</a> you can play an updated version of the game yourself.
+      But first we want to give you an impression of where our festival visitors played their version of the game.
+    </p>
 
-          import define from "./notebook/index.js";
-          import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+    <h3 id="ars-forest">Wood Chips & Fragrance Dispensers</h3>
 
-          new Runtime().module(define, name => {
-            switch (name) {
-              case "pokeBar": {
-                return new Inspector(document.querySelector("#obs-test-plot"))
-              };
-              case "viewof yMax": {
-                return new Inspector(document.querySelector("#obs-test-slider"))
-              };
-            }
-          });
+    <p>
+      The <em>AI Forest</em> installation consisted of an artifical forest envisioned by German artist Birke van
+      Maartens.
+      It was constructed by a team of stage builders from various materials.
+      Pedestals made from wood and vinyl served as &ldquo;islands&rdquo; on which different plants were placed.
+      In total, we used 80 potted ivy and fern plants and around 30 large tree branches, which emulated trees.
+      Visitors, each holding a tablet computer with the game installed, walked between these islands on wood chips.
+      Hidden throughout the forest were not only the mushroom models&mdash;which had QR codes printed on them, so that
+      they could be scanned with the tablets&mdash;but also speakers and fragrance dspensers.
+      The speakers played bird songs from Austrian bird species, rustling wind noises, and one played the sounds of a
+      nearby stream of water.
+      These sounds were specially curated by audio artist Kenji Tanaka.
+      The fragrance dispensers released vapor smelling of fir, spruce, and different pine trees.
+      Below you can see get some impressions of how the whole installation looked like.
+    </p>
 
-
-        </script>
-        <!-- <iframe width="100%" height="557" frameborder="0"
-          src="https://observablehq.com/embed/@infovis2023/observable-tutorial-part-i@555?cells=pokeBar%2Cviewof+yMax"></iframe> -->
-        <figcaption>
-          Test embedding of Observable cell
-        </figcaption>
-      </figure>
-    </d-figure>
-    <aside>Some text in an aside, margin notes, etc...</aside>
-    <p>Here's a test of an inline equation <d-math>c = a^2 + b^2</d-math>. Also with configurable katex standards just
-      using inline '$' signs: $$x^2$$ And then there's a block equation:</p>
     <d-figure>
       <figure class="l-body">
         <div id="carouselExampleControls" class="carousel slide" data-interval="false">
@@ -995,105 +1175,396 @@
         </div>
       </figure>
     </d-figure>
-    <d-math block>
-      c = \pm \sqrt{ \sum_{i=0}^{n}{a^{222} + b^2}}
-    </d-math>
-    <p>Math can also be quite involved:</p>
-    <d-math block>
-      \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}}
-      {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
-    </d-math>
-    <a class="marker" href="#section-1.1" id="section-1.1"><span>1.1</span></a>
-    <h3>Citations</h3>
     <p>
-      <d-slider style="width: 200px;"></d-slider>
+      Throughout our three-day presence at the Ars Electronica Festival, we welcomed 466 visitors to our <em>AI
+        Forest</em>.
+      We could use the study data from 328 of these participants.
+      We did not use data from participants who played the game together (e.g., parents with their children), and some
+      visitors could not finish the entire game due to time constraints of their visit.
+      In addition to the study data, we also got a lot of feedback from informal conversations with people after their
+      visits.
+      Below is a summary of the results from our artistic endeavor.
     </p>
-    <p>We can<d-cite bibtex-key="mercier2011humans"></d-cite> also cite <d-cite
-        key="gregor2015draw,mercier2011humans,openai2018charter"></d-cite> external publications. <d-cite
-        key="dong2014image,dumoulin2016guide,mordvintsev2015inceptionism"></d-cite>. We should also be testing footnotes
-      <d-footnote>This will become a hoverable footnote. This will become a hoverable footnote. This will become a
-        hoverable footnote. This will become a hoverable footnote. This will become a hoverable footnote. This will
-        become a hoverable footnote. This will become a hoverable footnote. This will become a hoverable footnote.
-      </d-footnote>. There are multiple footnotes, and they appear in the appendix<d-footnote>Given I have coded them
-        right. Also, here's math in a footnote: <d-math>c = \sum_0^i{x}</d-math>. Also, a citation. Box-ception<d-cite
-          key='gregor2015draw'></d-cite>!</d-footnote> as well.
-    </p>
-    <a class="marker" href="#section-2" id="section-2"><span>2</span></a>
-    <h2>Displaying code snippets</h2>
-    <p>Some inline javascript:<d-code language="javascript">var x = 25;</d-code>. And here's a javascript code block.
-    </p>
-    <d-code block language="javascript">
-      var x = 25;
-      function(x){
-      return x * x;
-      }
-    </d-code>
-    <p>We also support python.</p>
-    <d-code block language="python">
-      # Python 3: Fibonacci series up to n
-      def fib(n):
-      a, b = 0, 1
-      while a < n: print(a, end=' ' ) a, b=b, a+b </d-code>
-        <p>And a table</p>
-        <table>
-          <thead>
-            <tr>
-              <th>First</th>
-              <th>Second</th>
-              <th>Third</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>23</td>
-              <td>654</td>
-              <td>23</td>
-            </tr>
-            <tr>
-              <td>14</td>
-              <td>54</td>
-              <td>34</td>
-            </tr>
-            <tr>
-              <td>234</td>
-              <td>54</td>
-              <td>23</td>
-            </tr>
-          </tbody>
-        </table>
-        <d-figure id="last-figure"></d-figure>
-        <script>
-          const figure = document.querySelector("d-figure#last-figure");
-          const initTag = document.createElement("span");
-          initTag.textContent = "initialized!"
-          figure.appendChild(initTag);
-          figure.addEventListener("ready", function () {
-            const initTag = figure.querySelector("span");
-            initTag.textContent = "ready"
-            console.log('ready')
-          });
-          figure.addEventListener("onscreen", function () {
-            const initTag = figure.querySelector("span");
-            initTag.textContent = "onscreen"
-            console.log('onscreen')
-          });
-          figure.addEventListener("offscreen", function () {
-            const initTag = figure.querySelector("span");
-            initTag.textContent = "offscreen!"
-            console.log('offscreen')
-          });
-        </script>
-        <p>That's it for the example article!</p>
 
+    <figure class="fullscreen-diagram">
+      <div class="d-flex justify-content-center">
+        <div class="d-flex flex-row">
+          <div class="d-flex flex-column" style="width: 30%;">
+            <h4>Results from the Festival Study</h4>
+            <ul>
+              <li>
+                We could reproduce the main result from our first study. Participants who got the XAI interface again
+                performed beter in terms of classification correctness than participants who got the plain interface.
+                This is true for both the edibility assessment and the acutal pick-up decision (remember that we split
+                the identifaction task up into two questions.)
+              </li>
+              <li>
+                We could not reproduce our previous results regarding self-reported trust. This time, participants who
+                got the XAI interface did not report to trust the AI significantly less. Note, however, that in the
+                festival study we only asked about the self-reported trust once at the end, and not for every item
+                individually. We had changed this to keep the completion time short.
+              </li>
+              <li>
+                Along a similar line, participants who got the XAI interface did not rate the <em>Forestly</em> app in
+                a significantly different way.
+              </li>
+              <li>
+                Informal discussions after the game suggested that visitors really liked our installation, but also that
+                many were not aware of the dangers of using AI systems for high-risk decisionmaking tasks.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <h2 id="study-3">What's the Difference?</h2>
+
+    <p>
+      After our first online study and the gamified replication study at the festival, we now had reliable results about
+      our XAI interface helping users to make more correct decisions (i.e., to trust the AI more adequately).
+      We mentioned <a href="#study-conditions">earlier</a> that when we designed our XAI interface, we opted for a
+      combination of nearest neighbors and Grad-CAM.
+      While we did know now that this combination worked, we did not know if that was nearest neighbors worked, Grad-CAM
+      worked, or the combination worked.
+      We set out to perform a third study with new <em>Forestly</em> interfaces, in each of which only <em>one</em>
+      explanation technique was used.
+      This also gave us the opportunity to study an additional explanation technique.
+    </p>
+
+    <h3 id="study-3-dissect">A New Challenger Has Appeared</h3>
+
+    <p>
+      From informal feedback by the participants of our festival study, we got the feeling that most people had a hard
+      time understanding and using Grad-CAM.
+      Most of the participants from the XAI group told us that they had looked mostly at the nearest-neighbor images.
+      We hoped to create a third explanation technique, which would improve upon Grad-CAM by not only showing an
+      attribution map, but also relating the map to concepts tied to mushrooms.
+      For this new technique, we took inspiration from the network dissection technique <d-cite
+        key="bau_network_2017,bau_understanding_2020"></d-cite>.
+      We calculated the most important units of our neural network for each classification.
+      We then assigned semantic labels to the units and showed the activation maps of the units along with the labels.
+      With this new interface variant, we now had four <em>Forestly</em> variants: no explanations, nearest neighbors
+      (now without Grad-CAM), Grad-CAM (now without nearest neighbors), and the new semantic explanations:
+    </p>
+    <figure class="fullscreen d-flex justify-content-center">
+      <div class="d-flex justify-content-center" style="width: 1700px">
+        <div class="d-flex flex-column" style="width: 17%; margin-right: 5%;">
+          <img src="./images/onboarding-noexpl_EN.png" alt="Forestly variant without any explanations.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              Control interface with no explanations
+            </figcaption>
+          </div>
+        </div>
+        <div class="d-flex flex-column" style="width: 17%; margin-right: 5%;">
+          <img src="./images/onboarding-nn_EN.png" alt="Forestly variant with nearest neighbor explanations.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              <em>Forestly</em> interface with nearest-neighbor explanations.
+            </figcaption>
+          </div>
+        </div>
+        <div class="d-flex flex-column" style="width: 17%; margin-right: 5%;">
+          <img src="./images/onboarding-Grad-CAM_EN.png" alt="Forestly variant with Grad-CAM explanations.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              <em>Forestly</em> interface with Grad-CAM explanations.
+            </figcaption>
+          </div>
+        </div>
+        <div class="d-flex flex-column" style="width: 17%;">
+          <img src="./images/onboarding-dissect_EN.png" alt="Forestly variant with semantic explanations.">
+          <div class="d-flex justify-content-center" style="margin-top: 20px;">
+            <figcaption style="text-align: center;">
+              <em>Forestly</em> interface with semantic explanations.
+            </figcaption>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <p>
+      In our third study, we divided our participants into four groups. Each group received on of the four
+      layout variants shown above. But there was one more thing we wanted to explore in our study ...
+    </p>
+
+    <h3 id="study-3-align">Something's Awry</h3>
+
+    <p>
+      Remember when we mentioned the <a href="#study-stimuli">painstaking process of selecting certain mushroom
+        images</a> as stimuli? One thing we noticed while browsing through hundreds of mushroom classifications and
+      their explanations was that sometimes an explanation could be &ldquo;reassuring&ldquo;. It could make you think
+      &ldquo;Well, looks like everything makes sense here.&ldquo; At other times, looking at an explanation could raise
+      some concerns and make you think &ldquo;Hmm, something's not quite right here.&ldquo; For example, a Grad-CAM
+      explanation could highlight only strange regions in the background of the mushroom image. Would you trust an AI
+      suggestion if the AI did not even focus on the mushroom itself?
+    </p>
+    <p>
+      Our rough understanding was that &ldquo;reassuring&ldquo; explanations would be helpful if the AI was correct.
+      The other kind of explanations, which made things seem a bit more shady, would be more helpful in cases when the
+      AI was incorrect. You could then realize that something maybe wasn't quite right and overrule the AI.
+      For our selection of mushroom stimuli, we classified the explanations into the two different types and made sure
+      to include some itmes of each kind.
+    </p>
+    <p>
+      Before we get to our classification and the experimental results, you can play the game that our participants
+      played in this thrid study. We liked the gamification from the festival study, so we decided to reuse the game
+      idea and update the game with the new interfaces:
+    </p>
+    <figure class="fullscreen">
+      <div id="ai-forest-game" class="d-flex flex-column">
+        <div class="d-flex justify-content-center">
+          <iframe style="width: 80vw; height: 45vw;" frameborder="0" src="https://jku-vds-lab.at/hoxai/"></iframe>
+        </div>
+        <div class="d-flex justify-content-center">
+          <figcaption style="margin-top: 10px;">
+            Variant of our mushroom hunting game used for the third study.
+            <!-- TODO: update game -->
+          </figcaption>
+        </div>
+      </div>
+    </figure>
+    <p>
+      We conducted the third study as an online experiment with 501 participants.
+      Below are the summarized insights of the study, along with an interactive widget for exploring the quantitative
+      results.
+      In the tabel, each row lists one of the mushroom items from the study, with indications for whether the AI
+      suggestion was correct (<img class="inline-icon" src="./images/icon-ai-correct.png" alt="AI correct icon" />) or
+      incorrect (<img class="inline-icon" src="./images/icon-ai-incorrect.png" alt="AI incorrect icon" />), whether the
+      mushroom depicated was actually
+      edible (<img class="inline-icon" src="./images/icon-edible.png" alt="Edible icon" />) or poisonous (<img
+        class="inline-icon" src="./images/icon-poisonous.png" alt="Poisonous icon" />), and whether we deemed the
+      explanation to be
+      reassuring (<img class="inline-icon" src="./images/icon-xai-aligned.png" alt="Explanation reassuring icon" />; the
+      explanation fits with AI suggetsion like two pieces of a puzzle) or to raise concerns (<img class="inline-icon"
+        src="./images/icon-xai-notaligned.png" alt="Explanation raises concerns icon" />).
+      The two rightmost columns of the table show hom many participants assumed the mushroom to be edible and how many
+      picked it up, respecitvely.
+      The bar chart in the top left of the widget shows the average correctness of the pick-up decision faceted by the
+      four experimental groups and by the selection in the table.
+      Clicking on the button in the head of a row facets the results by the value of that row. For example, if you
+      click &ldquo;AI correctness&rdquo;, one bar for each group will show the correctness for only the mushroom items
+      with an incorrect AI suggestion, and one bar for the items with correct AI suggestions.
+      You can hover over the image thumbnails to view the <em>Forestly</em> screens that the control group saw.
+      Hovering over XAI icons (<img class="inline-icon" src="./images/icon-xai-aligned.png"
+        alt="Explanation reassuring icon" style="height: 2ex; margin-left: 0.16em; margin-right: 0.16em;" /> or <img
+        class="inline-icon" src="./images/icon-xai-notaligned.png" alt="Explanation raises concerns icon" />) shows the
+      screens for the respective variant. Finally, you can create your own item split by simply selecting items in the
+      leftmost column of the table.
+      For example, select the two items with a concerning nearest-neighbor explanation and an incorrect AI suggestion,
+      and notice how mush higher the correctness was for those items for the nearest-neighbor group.
+    </p>
+    <figure class="fullscreen-diagram">
+      <div class="d-flex justify-content-center">
+        <div class="d-flex flex-row">
+          <div class="d-flex flex-column" style="width: 25%;">
+            <h4>Results from the Third Study</h4>
+            <ul>
+              <li>
+                Nearest-neighbor explanations were the only ones that significantly improved the decision correctness.
+                The other two explanation techniques, Grad-CAM and our newly introduced semantic explanation, failed to
+                do so.
+                This means that the effectiveness of our previous combined explanation interface most likely hinged on
+                the nearest-neighbor explanations.
+              </li>
+              <li>
+                Nearest neighbors also was the only technique that led to significant differences for the subset of
+                items with incorrect AI suggestions.
+              </li>
+              <li>
+                Individual explanations can strongly affect the user behavior.
+                We found certain items for which the average behavior of one participant group deviated strongly from
+                the others.
+                Again, this effect was especially strong for one of the nearest-neighbor explanations.
+              </li>
+              <li>
+                Helpful explanations (which we defined as <img class="inline-icon" src="./images/icon-ai-correct.png"
+                  alt="AI correct icon" />+<img class="inline-icon" src="./images/icon-xai-aligned.png"
+                  alt="Explanation reassuring icon" /> or <img class="inline-icon" src="./images/icon-ai-incorrect.png"
+                  alt="AI incorrect icon" />+<img class="inline-icon" src="./images/icon-xai-notaligned.png"
+                  alt="Explanation raises concerns icon" />) led to better performance (i.e., more adequate trust).
+                This was again only statistically significant for nearest neighbors, but a similar tendecy was
+                observable for the semantic explanation.
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex flex-column" style="width: 75vw">
+            <div id="study-3-plot"></div>
+            <div id="study-3-table"></div>
+            <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
+            <script type="module">
+
+              import define from "./notebook/index.js";
+              import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+
+              new Runtime().module(define, name => {
+                switch (name) {
+                  case "plotAndImage": {
+                    return new Inspector(document.querySelector("#study-3-plot"))
+                  };
+                  case "viewof mushroomItems": {
+                    return new Inspector(document.querySelector("#study-3-table"))
+                  };
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <h2 id="blaming">Who's to Blame?</h2>
+
+    <p>
+      In <a href="#endscreen-figure">one of our game's endscreens</a>&mdash;the one for the case of at least one
+      poisonous mushrooms picked up&mdash;the toxicity of the stew is apparent. In real life, unfortunately, a poisonous
+      stew does not emit green vapor and skull symbols. On the contrary, for many mushrooms you might not taste any
+      difference and only find out when it's too late. If you collected the mushrooms with AI assistance and ended up
+      poisoning one of your dinner guests, who would you blame?
+    </p>
+    <p>
+      This is exactly the question that interested us in a final study.
+      We had sneakily included the following scenario in the surveys of the two online studies:
+    <blockquote>
+      Assume you decide to take a mushroom with you based on a recommendation of the artificial intelligence and give
+      it to a friend to eat. It turns out that it was a poisonous mushroom, and your friend complains of nausea,
+      vomiting and diarrhea.
+    </blockquote>
+    <p>
+      We then asked the participants how mush each agent in this scenario was to blame.
+      The different agents here are the participant themself, the AI, the AI's developers, the poisoned friend.
+      In addition to the blaming questions, we also asked participants in one of the studies how they viewed artifically
+      intelligent agents in general.
+      These are the results:
+    </p>
+    <figure class="fullscreen-diagram">
+      <div class="d-flex justify-content-center">
+        <div class="d-flex flex-row">
+          <div class="d-flex flex-column" style="width: 25%;">
+            <h4>Results on Blaming</h4>
+            <ul>
+              <li>
+                In the first online study, participants who did not receive additional explanations along with the AI
+                suggestions blamed
+                the AI significantly more.
+              </li>
+              <li>
+                In the second online study, there were no statistically significant effects, but results for the nearest
+                neighbor group suggest a trend towards participants blaming themselves more.
+              </li>
+              <li>
+                Participants blamed the AI more if they perceived it as having a mind of its own (which is in line with
+                previous psychological studies <d-cite key="gray_mind_2012"></d-cite>). Participants also blamed
+                themselves more if they thought they could have recognized the false classification (again in line with
+                previous research <d-cite key="malle_theory_2014"></d-cite>). This can also be seen in the network model
+                of moral reasoning shown on the right.
+              </li>
+              <li>
+                Across both studies, we found only limited evidence for <em>scapegoating</em>, i.e., there was no
+                negative correlation blaming oneself and blaming other actors.
+              </li>
+              <li>
+                Blame is not distributed equally. People blamed themselves and the AI most, followed by the developers.
+                The friend received the lowest amount of blame.
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex flex-column" style="width: 75vw">
+            <div id="blaming-legend"></div>
+            <div id="blaming-network"></div>
+            <div>
+              <figcaption>
+                Network model of moral reasoning in the fictitious poisoning scneario. Hover over the nodes to find out
+                what they stand for.
+              </figcaption>
+            </div>
+            <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
+            <script type="module">
+
+              import define from "./notebook/index.js";
+              import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+
+              new Runtime().module(define, name => {
+                switch (name) {
+                  case "blamingLegend": {
+                    return new Inspector(document.querySelector("#blaming-legend"))
+                  };
+                  case "blamingNetwork": {
+                    return new Inspector(document.querySelector("#blaming-network"))
+                  };
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </figure>
+
+    <p>
+      In addition to the results above, we also got some interesting takes on the scenario.
+      One participant felt that they are not to blame because
+    <blockquote>
+      ... [the AI] told me to pick the mushroom.
+    </blockquote>
+    Another participant outright blamed their poor poisoned friend:
+    <blockquote>
+      ... because he himself should have checked what he eats.
+    </blockquote>
+    You might want to think about these viewpoints the next time you visit one of your friends for a dinner night with
+    dishes made from foraged mushrooms.
+    </p>
+
+    <h2 id="conclusion">Conclusions</h2>
+
+    <p>
+      Finally, we want to summarize some of our main insights from this multi-year, transdisciplinary research project.
+    </p>
+    <p>
+      <b>Replication studies are important.</b> Throughout the different studies, we tried to replicate several
+      findings. The festival study was a replication study of the first experiment in a different setting. The second
+      online study as well as the second part of the blaming study aimed at relating the effects observed for the
+      combined interface to the individual explanation techniques. In all cases, we found that certain effects could be
+      replicated, while others might have been false positives or tied to very specific study conditions.
+      This allowed us to obtain reliable results.
+      We encourage all readers to consider replication studies for their own results as well as those of others.
+      While the psychology research community has long accepted the importance of such replication studies, we hope that
+      the visualization community will follow suit.
+    </p>
+    <p>
+      <b>There's much more to do.</b> Designing user studies is difficult and comes with many, many choices.
+      A single study, or even a whole research project, can only focus on a few dependent and indepentent variables.
+      All others have to be left fixed as control variables.
+      In our experiments, this ment that we only used one specific model with a fixed accuracy.
+      However, the accuracy of the model (and if and how you communicate it to the user) might be an important mediating
+      factor for how much users trust an AI.
+      There are many more potential mediating factors.
+      There are also many more applications scenarios apart form mushrooms.
+      It will be interesting to see how our results generalize in future studies.
+    </p>
+    <p>
+      <b>It's fun to try new things.</b> We started this project as a team consisting of computer scientists and
+      psychologists.
+      In the course of the project, we got to work with mycologists, graphic designers, visual and audio artists and
+      stage builders.
+      Some of us also got to be guides for an art festival installation, talking to hundreds of visitors with all sorts
+      of personal backgrounds.
+      All of these interactions were incredibly rewarding and it was great fun to combine so many influences in a
+      research project.
+    </p>
+    <p>
+      <b>We don't have to become Erewhonians.</b> Our results strongly suggest that XAI can be one way to help users
+      towards a more responsible use of AI support systems.
+      Correctly designed explanations can lead users to trusting an AI more adequately.
+      As a result, we believe that XAI can and will play a big role in the future for trust calibration.
+      The Erewhonians chose to relinquishing machines altogether because they saw too many risks.
+      But if people learn when to trust and when not to trust an AI, we will be able to keep artifically intelligent
+      systems as effective tools in our society.
+    </p>
 
   </d-article>
 
   <d-appendix>
-
-    <h3>Contributions</h3>
-    <p>Some text describing who did what.</p>
-    <h3>Reviewers</h3>
-    <p>Some text with links describing who reviewed the article.</p>
 
     <d-bibliography src="bibliography.bib"></d-bibliography>
   </d-appendix>
