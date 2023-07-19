@@ -486,16 +486,14 @@
       Even ML experts may find it hard to understand how and why exactly a model arrives at a certain decision.
       This challenge has been met with attempts to find ways of explaining at least certain aspects of a model and/or
       its decision, or of making models themselves more interpretable.
-      A plethora of explainable AI (XAI) techniques have resulted from these attempts.
+      A plethora of explainable AI (XAI) techniques have resulted from these attempts <d-cite
+        key="molnar_interpretable_2022"></d-cite>.
       However, many of these techniques were developed by and for ML domain experts, and it is still poorly understood
       how those techniques actually affect the user behavior, in particular that of lay users.
       Specifically, we were interested in how (visual) explanations for AI suggestions affect the <em>trust</em> of
-      human
-      lay
-      users in these suggestions.
+      human lay users in these suggestions.
       We, by the way, are a team of computer scientists interested in visualization and XAI and psychologists
-      interested
-      in human&ndash;computer interaction.
+      interested in human&ndash;computer interaction.
     </p>
     <p>
       Users of real-world AI systems, who are confronted with an AI's suggestion, face the problem of deciding whether
@@ -503,20 +501,16 @@
       Obviously, AI systems are not infallible. It cannot be a goal to make users always trust an AI's
       suggestion&mdash;especially in delicate situations, <em>overtrusting</em> an AI can be dangerous.
       Vice versa, <em>undertrusting</em> an AI can lead to poor decisions for tasks at which the AI actually performs
-      well
-      (and
-      there are several cases where ML models routinely achieve superhuman performance).
+      well (and there are more and more applications where AI can achieve superhuman performance <d-cite
+        key="brown_superhuman_2019,mirhoseini_graph_2021"></d-cite>).
       As a result, the main goal of XAI in relation to trust must be <em>trust calibration</em>, which means bringing
-      about an
-      adequate level of user trust.
+      about an adequate level of user trust.
       Enabling proper trust calibration for future applications requires an improved understanding of the effects
-      of
-      existing techniques on user trust.
+      of existing techniques on user trust.
     </p>
     <p>
       Psychological research has established that trust can only be studied in contexts where people have a certain
-      degree
-      of vulnerability and uncertainty.
+      degree of vulnerability and uncertainty <d-cite key="lee_trust_2004,hannibal_robot_2021"></d-cite>.
       For our research project, we were thus looking for a real-world use case that would fulfill the following
       criteria:
     </p>
@@ -580,11 +574,9 @@
     </figure>
     <p>
       Since ML models have become quite good at detecting certain features in images, AI-assisted mushroom hunting is
-      now
-      a thing.
+      now a thing.
       Several apps have already been unleashed on the public, which let people take photos of mushrooms and then use an
-      AI
-      to predict a species.
+      AI to predict a species.
       Due to the high risk posed by potentially deadly mushrooms, adequate trust in such systems is invaluable.
     </p>
     <aside>
@@ -604,11 +596,11 @@
       While the popularity of mushroom hunting varies around the world, in Austria, where we are from, it is quite a
       popular activity.
       Many people here have been out in the forest collecting mushrooms themselves, or at least know somebody who
-      regularly does so.
-      The same is true for most of central and northern Europe.
+      regularly does so <d-cite key="aigner_ethnomykologische_2016"></d-cite>.
+      The same is true for most of central and northern Europe <d-cite
+        key="svanberg_mushroom_2019,kaaronen_mycological_2020"></d-cite>.
       We were sure that there would be a fairly large target population for our study if we chose mushroom hunting as
-      the
-      use case.
+      the use case.
     </p>
     <p>
       <b>It's visual.</b>
@@ -661,16 +653,16 @@
     </p>
     <div>
       <p>
-        First, we can explain the general principles and inner workings of the AI system to the user.
+        First, we can explain the general principles and inner workings of the AI system to the user <d-cite
+          key="ng_ai_2021,long_what_2020"></d-cite>.
         This way, a user should be able to better judge what a system, in general, is capable of and how trustworthy its
         decisions are.
         We called this type of explanation an &ldquo;educational intervention&rdquo;, so that our terminology would not
-        be too
-        confusing.
+        be too confusing.
       </p>
       <p>
-        Second, we can explain individual outcomes using various XAI techniques that create so-called local
-        explanations.
+        Second, we can explain individual outcomes using XAI methods <d-cite
+          key="miller_explanation_2019,long_what_2020"></d-cite>.
         There are many different types of explanation techniques, and choosing any of them was a tough ask.
         After lots of consideration we opted for a combination of techniques.
         This might have not been an ideal choice, but we'll get to that later.
@@ -787,8 +779,7 @@
       This test, which was scheduled at the end of the study, asked questions about applying AI to mushroom
       identification.
       In hindsight, this test was probably not necessary, as it strongly correlated with the AI test&mdash;you can see
-      that
-      for yourself in a minute.
+      that for yourself in a minute.
     </p>
     <p>
       We had to make sure that each test included questions spanning from easy to very hard.
@@ -913,8 +904,7 @@
       After both pretests and the actual mushroom classification, we concluded the experiment with the
       &ldquo;task-specific
       AI comprehension&rdquo; test and general questions about the participants' intention to use the <em>Forestly</em>
-      app
-      or similar systems.
+      app or similar systems.
     </p>
     <h3 id="study-evaluation">Crunching the Numbers</h3>
     <p>
@@ -955,9 +945,9 @@
           </ul>
         </div>
         <div class="d-flex flex-column" style="width: 460px;">
-            <div id='study-1-plot' style="margin-top: 0px;"></div>
-            <div class="figcaption" id='study-1-x'></div>
-            <div class="figcaption" id='study-1-y'></div>
+          <div id='study-1-plot' style="margin-top: 0px;"></div>
+          <div class="figcaption" id='study-1-x'></div>
+          <div class="figcaption" id='study-1-y'></div>
         </div>
       </div>
     </figure>
