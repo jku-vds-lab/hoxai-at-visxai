@@ -18,6 +18,7 @@
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
   <script src="template.v2.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf8">
@@ -382,10 +383,18 @@
   </d-front-matter>
   <d-title>
     <p>Reflections on a Transdisciplinary Study on XAI and Trust</p>
-    <figure style="grid-column: page; margin: 1rem 0;"><img src="images/teaser-cropped.jpg"
-        style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2);" /></figure>
+    <figure style="grid-column: page; margin: 1rem 0;"><img src="images/hoxai-teaser.png" style="width:100%;" />
+    </figure>
     <p>
-      Abstract TBD
+      Does explainability change how users interact with an artificially intelligent agent?
+      We sought to answer this question in a transdisciplinary research project in a team of computer scientists and
+      psychologists.
+      We chose the high-risk decisionmaking task of AI-assisted mushroom hunting to study the effects that explanations
+      of AI suggestions have on user trust.
+      We present the summarized results of three studies, one of which was carried out in an unusual environment as part
+      of an art festival.
+      Our results show that visual explanations can lead to more adequate trust in AI systems and thereby to an improved
+      decision correctness.
     </p>
   </d-title>
   <d-byline></d-byline>
@@ -393,7 +402,7 @@
 
     <d-contents>
       <nav class="toc figcaption">
-        <h4>CONTENTS</h4>
+        <h4>Contents</h4>
         <div><a href="#introduction">Introduction</a></div>
         <ul>
           <li><a href="#trust-issues">Trust Issues</a></li>
@@ -562,26 +571,6 @@
     <div class="figcaption" id='doppelganger-checkbox'></div>
     <figure class="fullscreen">
       <div class="d-flex justify-content-center" id='doppelganger-main' style="margin: 0 auto; width: 1200px;"></div>
-      <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
-      <script type="module">
-
-        import define from "./notebook/index.js";
-        import { Runtime, Library, Inspector } from "./notebook/runtime.js";
-
-        new Runtime().module(define, name => {
-          switch (name) {
-            case "viewof toggleHideShow": {
-              return new Inspector(document.querySelector("#doppelganger-checkbox"))
-            };
-            case "updateDoppelganger": {
-              return true
-            };
-            case "mushroomDoppelganger": {
-              return new Inspector(document.querySelector("#doppelganger-main"))
-            };
-          }
-        });
-      </script>
       <div class="d-flex justify-content-center">
         <figcaption>
           One of these mushrooms is a delicious parasol, the other one a poisonous death cap. Can you spot the
@@ -597,12 +586,14 @@
       AI
       to predict a species.
       Due to the high risk posed by potentially deadly mushrooms, adequate trust in such systems is invaluable.
+    </p>
     <aside>
       We strongly advise against using such apps for pick-up decisions. They can be fun to play
       around with, but real mushroom hunting should only ever be performed by seasoned experts or under their
       supervision.
     </aside>
-    This makes mushroom hunting a nice use case for studying trust in the context of XAI.
+    <p>
+      This makes mushroom hunting a nice use case for studying trust in the context of XAI.
     </p>
     <p>
       <b>It's relatebale.</b>
@@ -731,8 +722,8 @@
       called <em>Forestly</em>.
     </p>
     <aside>
-      <img src="images/forestly-logo.svg" width="100%" />
-      <p>
+      <img src="images/forestly-logo.svg" width="100%" style="max-width: 200px;" />
+      <p style="margin-top: 5px;">
         Logo of the fictitious <em>Forestly</em> app.
       </p>
     </aside>
@@ -751,22 +742,11 @@
     </div>
     <aside>
       <img src="images/educational-intervention.svg" data-toggle="modal" data-target="#edu-modal"
-        style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2)" />
-      <p>Educational intervention designed for the first study (click to expand).</p>
+        style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2); max-width: 200px;" />
+      <p style="margin-top: 5px;">Educational intervention designed for the first study (click to expand).</p>
     </aside>
     <figure class="fullscreen">
       <div class="d-flex justify-content-center" id="forestly-interface" style="margin: 0 auto; width: 800px;"></div>
-      <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
-      <script type="module">
-        import define from "./notebook/index.js";
-        import { Runtime, Library, Inspector } from "./notebook/runtime.js";
-
-        new Runtime().module(define, name => {
-          if (name === "forestlyInterface") {
-            return new Inspector(document.querySelector("#forestly-interface"))
-          }
-        });
-      </script>
       <!-- <iframe width="100%" height="557" frameborder="0"
           src="https://observablehq.com/embed/@infovis2023/observable-tutorial-part-i@555?cells=pokeBar%2Cviewof+yMax"></iframe> -->
       <div class="d-flex justify-content-center">
@@ -952,56 +932,32 @@
     </p>
 
     <figure class="fullscreen-diagram">
-      <div class="d-flex justify-content-center">
-        <div class="d-flex flex-row">
-          <div class="d-flex flex-column" style="width: 30%;">
-            <h4>Results from the First Study</h4>
-            <ul>
-              <li>
-                Our educational intervention had no stistically significant effect. Participants who received it did not
-                perform any different in terms of decision correctness.
-              </li>
-              <li>
-                XAI did affect the performance. Participants who received explanations along with the AI suggestions
-                made
-                significantly more correct decisions (i.e., they knew better when to trust the AI and when not).
-              </li>
-              <li>
-                At the same time, participants who saw the XAI interface reported less trust in the system.
-              </li>
-              <li>
-                Decision performance did not vary with AI knowledge, and&mdash;more interestingly&mdash;did not vary
-                with mushroom knowledge.
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex flex-column" style="width: 30%;">
-            <div class="d-flex flex-column">
-              <div class="figcaption" id='study-1-x'></div>
-              <div class="figcaption" id='study-1-y'></div>
-              <div id='study-1-plot' style="margin-top: 0px;"></div>
-            </div>
-          </div>
-          <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
-          <script type="module">
-
-            import define from "./notebook/index.js";
-            import { Runtime, Library, Inspector } from "./notebook/runtime.js";
-
-            new Runtime().module(define, name => {
-              switch (name) {
-                case "viewof selectedXAxis": {
-                  return new Inspector(document.querySelector("#study-1-x"))
-                };
-                case "viewof selectedYAxis": {
-                  return new Inspector(document.querySelector("#study-1-y"))
-                };
-                case "plotAnyTwo": {
-                  return new Inspector(document.querySelector("#study-1-plot"))
-                };
-              }
-            });
-          </script>
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="d-flex flex-column" style="width: 30%; margin-right: 10%;">
+          <h4>Results from the First Study</h4>
+          <ul>
+            <li>
+              Our educational intervention had no stistically significant effect. Participants who received it did not
+              perform any different in terms of decision correctness.
+            </li>
+            <li>
+              XAI did affect the performance. Participants who received explanations along with the AI suggestions
+              made
+              significantly more correct decisions (i.e., they knew better when to trust the AI and when not).
+            </li>
+            <li>
+              At the same time, participants who saw the XAI interface reported less trust in the system.
+            </li>
+            <li>
+              Decision performance did not vary with AI knowledge, and&mdash;more interestingly&mdash;did not vary
+              with mushroom knowledge.
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex flex-column" style="width: 460px;">
+            <div id='study-1-plot' style="margin-top: 0px;"></div>
+            <div class="figcaption" id='study-1-x'></div>
+            <div class="figcaption" id='study-1-y'></div>
         </div>
       </div>
     </figure>
@@ -1190,33 +1146,31 @@
     </p>
 
     <figure class="fullscreen-diagram">
-      <div class="d-flex justify-content-center">
-        <div class="d-flex flex-row">
-          <div class="d-flex flex-column" style="width: 30%;">
-            <h4>Results from the Festival Study</h4>
-            <ul>
-              <li>
-                We could reproduce the main result from our first study. Participants who got the XAI interface again
-                performed beter in terms of classification correctness than participants who got the plain interface.
-                This is true for both the edibility assessment and the acutal pick-up decision (remember that we split
-                the identifaction task up into two questions.)
-              </li>
-              <li>
-                We could not reproduce our previous results regarding self-reported trust. This time, participants who
-                got the XAI interface did not report to trust the AI significantly less. Note, however, that in the
-                festival study we only asked about the self-reported trust once at the end, and not for every item
-                individually. We had changed this to keep the completion time short.
-              </li>
-              <li>
-                Along a similar line, participants who got the XAI interface did not rate the <em>Forestly</em> app in
-                a significantly different way.
-              </li>
-              <li>
-                Informal discussions after the game suggested that visitors really liked our installation, but also that
-                many were not aware of the dangers of using AI systems for high-risk decisionmaking tasks.
-              </li>
-            </ul>
-          </div>
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="d-flex flex-column" style="width: 30%;">
+          <h4>Results from the Festival Study</h4>
+          <ul>
+            <li>
+              We could reproduce the main result from our first study. Participants who got the XAI interface again
+              performed beter in terms of classification correctness than participants who got the plain interface.
+              This is true for both the edibility assessment and the acutal pick-up decision (remember that we split
+              the identifaction task up into two questions.)
+            </li>
+            <li>
+              We could not reproduce our previous results regarding self-reported trust. This time, participants who
+              got the XAI interface did not report to trust the AI significantly less. Note, however, that in the
+              festival study we only asked about the self-reported trust once at the end, and not for every item
+              individually. We had changed this to keep the completion time short.
+            </li>
+            <li>
+              Along a similar line, participants who got the XAI interface did not rate the <em>Forestly</em> app in
+              a significantly different way.
+            </li>
+            <li>
+              Informal discussions after the game suggested that visitors really liked our installation, but also that
+              many were not aware of the dangers of using AI systems for high-risk decisionmaking tasks.
+            </li>
+          </ul>
         </div>
       </div>
     </figure>
@@ -1359,60 +1313,41 @@
       and notice how mush higher the correctness was for those items for the nearest-neighbor group.
     </p>
     <figure class="fullscreen-diagram">
-      <div class="d-flex justify-content-center">
-        <div class="d-flex flex-row">
-          <div class="d-flex flex-column" style="width: 25%;">
-            <h4>Results from the Third Study</h4>
-            <ul>
-              <li>
-                Nearest-neighbor explanations were the only ones that significantly improved the decision correctness.
-                The other two explanation techniques, Grad-CAM and our newly introduced semantic explanation, failed to
-                do so.
-                This means that the effectiveness of our previous combined explanation interface most likely hinged on
-                the nearest-neighbor explanations.
-              </li>
-              <li>
-                Nearest neighbors also was the only technique that led to significant differences for the subset of
-                items with incorrect AI suggestions.
-              </li>
-              <li>
-                Individual explanations can strongly affect the user behavior.
-                We found certain items for which the average behavior of one participant group deviated strongly from
-                the others.
-                Again, this effect was especially strong for one of the nearest-neighbor explanations.
-              </li>
-              <li>
-                Helpful explanations (which we defined as <img class="inline-icon" src="./images/icon-ai-correct.png"
-                  alt="AI correct icon" />+<img class="inline-icon" src="./images/icon-xai-aligned.png"
-                  alt="Explanation reassuring icon" /> or <img class="inline-icon" src="./images/icon-ai-incorrect.png"
-                  alt="AI incorrect icon" />+<img class="inline-icon" src="./images/icon-xai-notaligned.png"
-                  alt="Explanation raises concerns icon" />) led to better performance (i.e., more adequate trust).
-                This was again only statistically significant for nearest neighbors, but a similar tendecy was
-                observable for the semantic explanation.
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex flex-column" style="width: 75vw">
-            <div id="study-3-plot"></div>
-            <div id="study-3-table"></div>
-            <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
-            <script type="module">
-
-              import define from "./notebook/index.js";
-              import { Runtime, Library, Inspector } from "./notebook/runtime.js";
-
-              new Runtime().module(define, name => {
-                switch (name) {
-                  case "plotAndImage": {
-                    return new Inspector(document.querySelector("#study-3-plot"))
-                  };
-                  case "viewof mushroomItems": {
-                    return new Inspector(document.querySelector("#study-3-table"))
-                  };
-                }
-              });
-            </script>
-          </div>
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="d-flex flex-column" style="width: 25%; margin-right: 5%;">
+          <h4>Results from the Third Study</h4>
+          <ul>
+            <li>
+              Nearest-neighbor explanations were the only ones that significantly improved the decision correctness.
+              The other two explanation techniques, Grad-CAM and our newly introduced semantic explanation, failed to
+              do so.
+              This means that the effectiveness of our previous combined explanation interface most likely hinged on
+              the nearest-neighbor explanations.
+            </li>
+            <li>
+              Nearest neighbors also was the only technique that led to significant differences for the subset of
+              items with incorrect AI suggestions.
+            </li>
+            <li>
+              Individual explanations can strongly affect the user behavior.
+              We found certain items for which the average behavior of one participant group deviated strongly from
+              the others.
+              Again, this effect was especially strong for one of the nearest-neighbor explanations.
+            </li>
+            <li>
+              Helpful explanations (which we defined as <img class="inline-icon" src="./images/icon-ai-correct.png"
+                alt="AI correct icon" />+<img class="inline-icon" src="./images/icon-xai-aligned.png"
+                alt="Explanation reassuring icon" /> or <img class="inline-icon" src="./images/icon-ai-incorrect.png"
+                alt="AI incorrect icon" />+<img class="inline-icon" src="./images/icon-xai-notaligned.png"
+                alt="Explanation raises concerns icon" />) led to better performance (i.e., more adequate trust).
+              This was again only statistically significant for nearest neighbors, but a similar tendecy was
+              observable for the semantic explanation.
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex flex-column" style="width: 1000px">
+          <div id="study-3-plot"></div>
+          <div id="study-3-table"></div>
         </div>
       </div>
     </figure>
@@ -1442,63 +1377,44 @@
       These are the results:
     </p>
     <figure class="fullscreen-diagram">
-      <div class="d-flex justify-content-center">
-        <div class="d-flex flex-row">
-          <div class="d-flex flex-column" style="width: 25%;">
-            <h4>Results on Blaming</h4>
-            <ul>
-              <li>
-                In the first online study, participants who did not receive additional explanations along with the AI
-                suggestions blamed
-                the AI significantly more.
-              </li>
-              <li>
-                In the second online study, there were no statistically significant effects, but results for the nearest
-                neighbor group suggest a trend towards participants blaming themselves more.
-              </li>
-              <li>
-                Participants blamed the AI more if they perceived it as having a mind of its own (which is in line with
-                previous psychological studies <d-cite key="gray_mind_2012"></d-cite>). Participants also blamed
-                themselves more if they thought they could have recognized the false classification (again in line with
-                previous research <d-cite key="malle_theory_2014"></d-cite>). This can also be seen in the network model
-                of moral reasoning shown on the right.
-              </li>
-              <li>
-                Across both studies, we found only limited evidence for <em>scapegoating</em>, i.e., there was no
-                negative correlation blaming oneself and blaming other actors.
-              </li>
-              <li>
-                Blame is not distributed equally. People blamed themselves and the AI most, followed by the developers.
-                The friend received the lowest amount of blame.
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex flex-column" style="width: 75vw">
-            <div id="blaming-legend"></div>
-            <div id="blaming-network"></div>
-            <div>
-              <figcaption>
-                Network model of moral reasoning in the fictitious poisoning scneario. Hover over the nodes to find out
-                what they stand for.
-              </figcaption>
-            </div>
-            <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
-            <script type="module">
-
-              import define from "./notebook/index.js";
-              import { Runtime, Library, Inspector } from "./notebook/runtime.js";
-
-              new Runtime().module(define, name => {
-                switch (name) {
-                  case "blamingLegend": {
-                    return new Inspector(document.querySelector("#blaming-legend"))
-                  };
-                  case "blamingNetwork": {
-                    return new Inspector(document.querySelector("#blaming-network"))
-                  };
-                }
-              });
-            </script>
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <div class="d-flex flex-column" style="width: 25%;">
+          <h4>Results on Blaming</h4>
+          <ul>
+            <li>
+              In the first online study, participants who did not receive additional explanations along with the AI
+              suggestions blamed
+              the AI significantly more.
+            </li>
+            <li>
+              In the second online study, there were no statistically significant effects, but results for the nearest
+              neighbor group suggest a trend towards participants blaming themselves more.
+            </li>
+            <li>
+              Participants blamed the AI more if they perceived it as having a mind of its own (which is in line with
+              previous psychological studies <d-cite key="gray_mind_2012"></d-cite>). Participants also blamed
+              themselves more if they thought they could have recognized the false classification (again in line with
+              previous research <d-cite key="malle_theory_2014"></d-cite>). This can also be seen in the network model
+              of moral reasoning shown on the right.
+            </li>
+            <li>
+              Across both studies, we found only limited evidence for <em>scapegoating</em>, i.e., there was no
+              negative correlation blaming oneself and blaming other actors.
+            </li>
+            <li>
+              Blame is not distributed equally. People blamed themselves and the AI most, followed by the developers.
+              The friend received the lowest amount of blame.
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex flex-column" style="width: 600px">
+          <div id="blaming-legend"></div>
+          <div id="blaming-network"></div>
+          <div>
+            <figcaption>
+              Network model of moral reasoning in the fictitious poisoning scneario. Hover over the nodes to find out
+              what they stand for.
+            </figcaption>
           </div>
         </div>
       </div>
@@ -1507,15 +1423,19 @@
     <p>
       In addition to the results above, we also got some interesting takes on the scenario.
       One participant felt that they are not to blame because
+    </p>
     <blockquote>
       ... [the AI] told me to pick the mushroom.
     </blockquote>
-    Another participant outright blamed their poor poisoned friend:
+    <p>
+      Another participant outright blamed their poor poisoned friend
+    </p>
     <blockquote>
       ... because he himself should have checked what he eats.
     </blockquote>
-    You might want to think about these viewpoints the next time you visit one of your friends for a dinner night with
-    dishes made from foraged mushrooms.
+    <p>
+      You might want to think about these viewpoints the next time you visit one of your friends for a dinner night with
+      dishes made from foraged mushrooms.
     </p>
 
     <h2 id="conclusion">Conclusions</h2>
@@ -1593,5 +1513,48 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+  <script type="module">
+    import define from "./notebook/index.js";
+    import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+
+    new Runtime().module(define, name => {
+      switch (name) {
+        case "viewof toggleHideShow": {
+          return new Inspector(document.querySelector("#doppelganger-checkbox"))
+        };
+        case "updateDoppelganger": {
+          return true
+        };
+        case "mushroomDoppelganger": {
+          return new Inspector(document.querySelector("#doppelganger-main"))
+        };
+        case "forestlyInterface": {
+          return new Inspector(document.querySelector("#forestly-interface"))
+        }
+        case "viewof selectedXAxis": {
+          return new Inspector(document.querySelector("#study-1-x"))
+        };
+        case "viewof selectedYAxis": {
+          return new Inspector(document.querySelector("#study-1-y"))
+        };
+        case "plotAnyTwo": {
+          return new Inspector(document.querySelector("#study-1-plot"))
+        };
+        case "blamingLegend": {
+          return new Inspector(document.querySelector("#blaming-legend"))
+        };
+        case "blamingNetwork": {
+          return new Inspector(document.querySelector("#blaming-network"))
+        };
+        case "plotAndImage": {
+          return new Inspector(document.querySelector("#study-3-plot"))
+        };
+        case "viewof mushroomItems": {
+          return new Inspector(document.querySelector("#study-3-table"))
+        };
+      }
+    });
+  </script>
 
 </body>

@@ -1367,7 +1367,7 @@ ${math}
 
   var print = "/*\r\n * Copyright 2018 The Distill Template Authors\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n *      http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n */\r\n\r\n@media print {\r\n\r\n  @page {\r\n    size: 8in 11in;\r\n    @bottom-right {\r\n      content: counter(page) \" of \" counter(pages);\r\n    }\r\n  }\r\n\r\n  html {\r\n    /* no general margins -- CSS Grid takes care of those */\r\n  }\r\n\r\n  p, code {\r\n    page-break-inside: avoid;\r\n  }\r\n\r\n  h2, h3 {\r\n    page-break-after: avoid;\r\n  }\r\n\r\n  d-header {\r\n    visibility: hidden;\r\n  }\r\n\r\n  d-footer {\r\n    display: none!important;\r\n  }\r\n\r\n}\r\n";
 
-  var byline = "/*\r\n * Copyright 2018 The Distill Template Authors\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n *      http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n */\r\n\r\nd-byline {\r\n  contain: style;\r\n  overflow: hidden;\r\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\r\n  font-size: 0.8rem;\r\n  line-height: 1.8em;\r\n  padding: 1.5rem 0;\r\n  min-height: 1.8em;\r\n}\r\n\r\n\r\nd-byline .byline {\r\n  grid-template-columns: 1fr 1fr;\r\n  grid-column: text;\r\n}\r\n\r\n@media(min-width: 768px) {\r\n  d-byline .byline {\r\n    grid-template-columns: 1fr 1fr 1fr 1fr;\r\n  }\r\n}\r\n\r\nd-byline .authors-affiliations {\r\n  grid-column-end: span 2;\r\n  grid-template-columns: 1fr 1fr;\r\n  margin-bottom: 1em;\r\n}\r\n\r\n@media(min-width: 768px) {\r\n  d-byline .authors-affiliations {\r\n    margin-bottom: 0;\r\n  }\r\n}\r\n\r\nd-byline h3 {\r\n  font-size: 0.6rem;\r\n  font-weight: 400;\r\n  color: rgba(0, 0, 0, 0.5);\r\n  margin: 0;\r\n  text-transform: uppercase;\r\n}\r\n\r\nd-byline p {\r\n  margin: 0;\r\n}\r\n\r\nd-byline a,\r\nd-article d-byline a {\r\n  color: rgba(0, 0, 0, 0.8);\r\n  text-decoration: none;\r\n  border-bottom: none;\r\n}\r\n\r\nd-article d-byline a:hover {\r\n  text-decoration: underline;\r\n  border-bottom: none;\r\n}\r\n\r\nd-byline p.author {\r\n  font-weight: 500;\r\n}\r\n\r\nd-byline .affiliations {\r\n\r\n}\r\n";
+  var byline = "/*\r\n * Copyright 2018 The Distill Template Authors\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n *      http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n */\r\n\r\nd-byline {\r\n  contain: style;\r\n  overflow: hidden;\r\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\r\n  font-size: 0.8rem;\r\n  line-height: 1.8em;\r\n  padding: 1.5rem 0;\r\n  min-height: 1.8em;\r\n}\r\n\r\n\r\nd-byline .byline {\r\n  grid-template-columns: 1fr 1fr;\r\n  grid-column: text;\r\n}\r\n\r\n@media(min-width: 768px) {\r\n  d-byline .byline {\r\n    grid-template-columns: 1fr 1fr;\r\n  }\r\n}\r\n\r\nd-byline .authors-affiliations {\r\n  grid-column-end: span 2;\r\n  grid-template-columns: 1fr 1fr;\r\n  margin-bottom: 1em;\r\n}\r\n\r\n@media(min-width: 768px) {\r\n  d-byline .authors-affiliations {\r\n    margin-bottom: 0;\r\n  }\r\n}\r\n\r\nd-byline h3 {\r\n  font-size: 0.6rem;\r\n  font-weight: 400;\r\n  color: rgba(0, 0, 0, 0.5);\r\n  margin: 0;\r\n  text-transform: uppercase;\r\n}\r\n\r\nd-byline p {\r\n  margin: 0;\r\n}\r\n\r\nd-byline a,\r\nd-article d-byline a {\r\n  color: rgba(0, 0, 0, 0.8);\r\n  text-decoration: none;\r\n  border-bottom: none;\r\n}\r\n\r\nd-article d-byline a:hover {\r\n  text-decoration: underline;\r\n  border-bottom: none;\r\n}\r\n\r\nd-byline p.author {\r\n  font-weight: 500;\r\n}\r\n\r\nd-byline .affiliations {\r\n\r\n}\r\n";
 
   var article = "/*\r\n * Copyright 2018 The Distill Template Authors\r\n *\r\n * Licensed under the Apache License, Version 2.0 (the \"License\");\r\n * you may not use this file except in compliance with the License.\r\n * You may obtain a copy of the License at\r\n *\r\n *      http://www.apache.org/licenses/LICENSE-2.0\r\n *\r\n * Unless required by applicable law or agreed to in writing, software\r\n * distributed under the License is distributed on an \"AS IS\" BASIS,\r\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n * See the License for the specific language governing permissions and\r\n * limitations under the License.\r\n */\r\n\r\nd-article {\r\n  contain: layout style;\r\n  overflow-x: hidden;\r\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding-top: 2rem;\r\n  color: rgba(0, 0, 0, 0.8);\r\n}\r\n\r\nd-article > * {\r\n  grid-column: text;\r\n}\r\n\r\n@media(min-width: 768px) {\r\n  d-article {\r\n    font-size: 16px;\r\n  }\r\n}\r\n\r\n@media(min-width: 1024px) {\r\n  d-article {\r\n    font-size: 1.06rem;\r\n    line-height: 1.7em;\r\n  }\r\n}\r\n\r\n\r\n/* H2 */\r\n\r\n\r\nd-article .marker {\r\n  text-decoration: none;\r\n  border: none;\r\n  counter-reset: section;\r\n  grid-column: kicker;\r\n  line-height: 1.7em;\r\n}\r\n\r\nd-article .marker:hover {\r\n  border: none;\r\n}\r\n\r\nd-article .marker span {\r\n  padding: 0 3px 4px;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\r\n  position: relative;\r\n  top: 4px;\r\n}\r\n\r\nd-article .marker:hover span {\r\n  color: rgba(0, 0, 0, 0.7);\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.7);\r\n}\r\n\r\nd-article h2 {\r\n  font-weight: 600;\r\n  font-size: 24px;\r\n  line-height: 1.25em;\r\n  margin: 2rem 0 1.5rem 0;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding-bottom: 1rem;\r\n}\r\n\r\n@media(min-width: 1024px) {\r\n  d-article h2 {\r\n    font-size: 36px;\r\n  }\r\n}\r\n\r\n/* H3 */\r\n\r\nd-article h3 {\r\n  font-weight: 700;\r\n  font-size: 18px;\r\n  line-height: 1.4em;\r\n  margin-bottom: 1em;\r\n  margin-top: 2em;\r\n}\r\n\r\n@media(min-width: 1024px) {\r\n  d-article h3 {\r\n    font-size: 20px;\r\n  }\r\n}\r\n\r\n/* H4 */\r\n\r\nd-article h4 {\r\n  font-weight: 600;\r\n  text-transform: uppercase;\r\n  font-size: 14px;\r\n  line-height: 1.4em;\r\n}\r\n\r\nd-article a {\r\n  color: inherit;\r\n}\r\n\r\nd-article p,\r\nd-article ul,\r\nd-article ol,\r\nd-article blockquote {\r\n  margin-top: 0;\r\n  margin-bottom: 1em;\r\n  margin-left: 0;\r\n  margin-right: 0;\r\n}\r\n\r\nd-article blockquote {\r\n  border-left: 2px solid rgba(0, 0, 0, 0.2);\r\n  padding-left: 2em;\r\n  font-style: italic;\r\n  color: rgba(0, 0, 0, 0.6);\r\n}\r\n\r\nd-article a {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.4);\r\n  text-decoration: none;\r\n}\r\n\r\nd-article a:hover {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.8);\r\n}\r\n\r\nd-article .link {\r\n  text-decoration: underline;\r\n  cursor: pointer;\r\n}\r\n\r\nd-article ul,\r\nd-article ol {\r\n  padding-left: 24px;\r\n}\r\n\r\nd-article li {\r\n  margin-bottom: 1em;\r\n  margin-left: 0;\r\n  padding-left: 0;\r\n}\r\n\r\nd-article li:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\nd-article pre {\r\n  font-size: 14px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\nd-article hr {\r\n  grid-column: screen;\r\n  width: 100%;\r\n  border: none;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  margin-top: 60px;\r\n  margin-bottom: 60px;\r\n}\r\n\r\nd-article section {\r\n  margin-top: 60px;\r\n  margin-bottom: 60px;\r\n}\r\n\r\nd-article span.equation-mimic {\r\n  font-family: georgia;\r\n  font-size: 115%;\r\n  font-style: italic;\r\n}\r\n\r\nd-article > d-code,\r\nd-article section > d-code  {\r\n  display: block;\r\n}\r\n\r\nd-article > d-math[block],\r\nd-article section > d-math[block]  {\r\n  display: block;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  d-article > d-code,\r\n  d-article section > d-code,\r\n  d-article > d-math[block],\r\n  d-article section > d-math[block] {\r\n      overflow-x: scroll;\r\n      -ms-overflow-style: none;  // IE 10+\r\n      overflow: -moz-scrollbars-none;  // Firefox\r\n  }\r\n\r\n  d-article > d-code::-webkit-scrollbar,\r\n  d-article section > d-code::-webkit-scrollbar,\r\n  d-article > d-math[block]::-webkit-scrollbar,\r\n  d-article section > d-math[block]::-webkit-scrollbar {\r\n    display: none;  // Safari and Chrome\r\n  }\r\n}\r\n\r\nd-article .citation {\r\n  color: #668;\r\n  cursor: pointer;\r\n}\r\n\r\nd-include {\r\n  width: auto;\r\n  display: block;\r\n}\r\n\r\nd-figure {\r\n  contain: layout style;\r\n}\r\n\r\n/* KaTeX */\r\n\r\n.katex, .katex-prerendered {\r\n  contain: style;\r\n  display: inline-block;\r\n}\r\n\r\n/* Tables */\r\n\r\nd-article table {\r\n  border-collapse: collapse;\r\n  margin-bottom: 1.5rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\r\n}\r\n\r\nd-article table th {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\r\n}\r\n\r\nd-article table td {\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\r\n}\r\n\r\nd-article table tr:last-of-type td {\r\n  border-bottom: none;\r\n}\r\n\r\nd-article table th,\r\nd-article table td {\r\n  font-size: 15px;\r\n  padding: 2px 8px;\r\n}\r\n\r\nd-article table tbody :first-child td {\r\n  padding-top: 2px;\r\n}\r\n";
 
@@ -2100,21 +2100,22 @@ d-appendix > distill-appendix {
         </p>
       `).join('')}
     </div>
-    <div>
-      <h3>Published</h3>
-      ${frontMatter.publishedDate ? `
-        <p>${frontMatter.publishedMonth} ${frontMatter.publishedDay}, ${frontMatter.publishedYear}</p> ` : `
-        <p><em>Not published yet.</em></p>`}
-    </div>
-    <div>
-      <h3>DOI</h3>
-      ${frontMatter.doi ? `
-        <p><a href="https://doi.org/${frontMatter.doi}">${frontMatter.doi}</a></p>` : `
-        <p><em>No DOI yet.</em></p>`}
-    </div>
   </div>
 `;
   }
+
+  // {/* <div>
+  // <h3>Published</h3>
+  // ${frontMatter.publishedDate ? `
+  //   <p>${frontMatter.publishedMonth} ${frontMatter.publishedDay}, ${frontMatter.publishedYear}</p> ` : `
+  //   <p><em>Not published yet.</em></p>`}
+  // </div>
+  //     <div>
+  //     <h3>DOI</h3>
+  //     ${frontMatter.doi ? `
+  //       <p><a href="https://doi.org/${frontMatter.doi}">${frontMatter.doi}</a></p>` : `
+  //       <p><em>No DOI yet.</em></p>`}
+  //   </div> */}
 
   class Byline extends HTMLElement {
 
@@ -8919,7 +8920,7 @@ p small {
     }
   }
 
-  var logo = "<svg viewBox=\"-607 419 64 64\">\r\n  <path d=\"M-573.4,478.9c-8,0-14.6-6.4-14.6-14.5s14.6-25.9,14.6-40.8c0,14.9,14.6,32.8,14.6,40.8S-565.4,478.9-573.4,478.9z\"/>\r\n</svg>\r\n";
+  var logo = "<svg viewBox=\"0 0 80 80\" ><g><path d=\"m41.814 15c-7.5824 0.0132-14.784 2.024-21.605 6.0327-6.8433 4.022-12.29 9.3462-16.341 15.972-0.57871 1.0128-0.86807 2.011-0.86807 2.9948s0.28936 1.9821 0.86807 2.9948c4.051 6.6262 9.4981 11.95 16.341 15.972 6.8206 4.0087 14.022 6.0195 21.605 6.0327v-5.5556c-6.7422-0.013-13.003-1.7706-18.783-5.2732-5.8016-3.5157-10.627-8.2394-14.475-14.171 4.3982-6.8288 9.9104-11.936 16.537-15.321-1.7651 3.0093-2.6476 6.2646-2.6476 9.7658 0 5.3531 1.9025 9.9321 5.7075 13.737 3.7871 3.7871 8.6961 6.3778 13.662 6.3944zm-6.0653 8.0906c3e-3 -1e-5 7e-3 -1e-5 0.0104 0 1.1505 0 2.0832 0.93268 2.0832 2.0832-1e-5 0.75025-0.40344 1.4426-1.0562 1.8124-0.44477 0.31267-0.87064 0.67143-1.277 1.0778-1.7651 1.7651-2.6476 3.8918-2.6476 6.3803 0 0.57871-0.20255 1.0706-0.60765 1.4757s-0.897 0.60765-1.4757 0.60765c-0.57871 0-1.0706-0.20255-1.4757-0.60765s-0.60765-0.897-0.60765-1.4757c0-3.617 1.2949-6.7203 3.8846-9.31 0.59654-0.59653 1.2209-1.123 1.8719-1.582 0.36762-0.29651 0.82507-0.4593 1.2974-0.46168z\" fill=\"#bfbfbf\"/><path d=\"m43.934 46.272h27.209l-1e-5 8.3038h-27.209z\" fill=\"#007dad\"/><path d=\"m43.934 56.696h14.044v8.3038h-14.044z\" fill=\"#f15a4e\"/><path d=\"m43.934 15h7.2202l-1e-5 8.3038h-7.2202z\" fill=\"#ae619d\"/><path d=\"m43.934 25.424h21.551v8.3038h-21.551z\" fill=\"#b2d349\"/><path d=\"m43.934 35.848h33.866v8.3038h-33.866z\" fill=\"#fdb812\"/></g></svg>\n";
 
   const headerTemplate = `
 <style>
@@ -8950,9 +8951,9 @@ distill-header a:hover {
   color: rgba(255, 255, 255, 1);
 }
 distill-header svg {
-  width: 24px;
+  width: 32px;
   position: relative;
-  top: 4px;
+  top: 8px;
   margin-right: 2px;
 }
 @media(min-width: 1080px) {
@@ -8966,11 +8967,6 @@ distill-header svg {
   }
   distill-header .logo {
   }
-}
-distill-header svg path {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.8);
-  stroke-width: 3px;
 }
 distill-header .logo {
   font-size: 17px;
@@ -8987,15 +8983,11 @@ distill-header .nav a {
 }
 </style>
 <div class="content">
-  <a href="/" class="logo">
+  <a href="https://jku-vds-lab.at" class="logo">
     ${logo}
-    Distill
+    JKU Visual Data Science Lab
   </a>
-  <nav class="nav">
-    <a href="/about/">About</a>
-    <a href="/prize/">Prize</a>
-    <a href="/journal/">Submit</a>
-  </nav>
+
 </div>
 `;
 
@@ -9083,6 +9075,8 @@ distill-header .nav a {
 
   }
 
+  var logo$1 = "<svg viewBox=\"-607 419 64 64\">\r\n  <path d=\"M-573.4,478.9c-8,0-14.6-6.4-14.6-14.5s14.6-25.9,14.6-40.8c0,14.9,14.6,32.8,14.6,40.8S-565.4,478.9-573.4,478.9z\"/>\r\n</svg>\r\n";
+
   const footerTemplate = `
 <style>
 
@@ -9137,7 +9131,7 @@ distill-header .nav a {
 <div class='footer-container'>
 
   <a href="/" class="logo">
-    ${logo}
+    ${logo$1}
     Distill
   </a> is dedicated to clear explanations of machine learning
 
