@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="534.20312"
+   height="171.40039"
+   viewBox="0 0 534.20312 171.40039"
+   sodipodi:docname="jku-logo.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.4612048"
+     inkscape:cx="262.11246"
+     inkscape:cy="108.12995"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10">
+    <inkscape:page
+       x="0"
+       y="0"
+       id="page8"
+       width="534.20312"
+       height="171.40039" />
+  </sodipodi:namedview>
+  <g
+     id="g10"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,-1.3333333,-2.0312499,301.53515)">
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1"
+       d="M 119.12549,129.77637 V 99.549319 h 139.125 v 30.227051 h -0.0747 z"
+       id="path399" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1"
+       d="m 280.97755,226.15137 v -66.67529 c 0,-41.02796 22.79598,-61.875003 60.14795,-61.875003 37.35196,0 61.05029,20.698993 61.05029,62.772953 v 65.77734 h -30.60205 v -66.90234 c 0,-22.05098 -11.32402,-33.375 -30,-33.375 -18.67598,0 -30,11.69907 -30,34.35205 v 65.92529 z"
+       id="path397" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1"
+       d="m 119.12549,226.15137 v -36.75 l 69.52295,-59.55029 69.52735,59.55029 v 36.75 l -69.52735,-59.625 z"
+       id="path395" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1"
+       d="m 64.898439,226.15137 v -76.875 h 0.0791 c 0,-16.12498 -7.12597,-23.02734 -18.676759,-23.02734 -9.74999,0 -17.476501,5.17601 -25.425293,13.875 L 1.5234375,118.67432 C 11.051578,107.35033 25.374604,97.822268 47.050782,97.822268 c 15.073785,0 27.597159,4.352822 36.147951,12.903812 8.324191,8.32399 13.125,20.69826 13.125,37.19824 v 78.22705 z"
+       id="path304" />
+  </g>
+</svg>

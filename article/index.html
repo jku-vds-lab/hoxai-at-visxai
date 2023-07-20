@@ -16,14 +16,28 @@
 <!doctype html>
 
 <head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./notebook/inspector.css">
   <script src="template.v2.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf8">
   <style>
-    /* own stuffinline icons */
+    /* own stuff */
+
+    figure table img {
+      width: auto;
+    }
+
+    .legend-ramp {
+      width: 62.5%;
+      background: none;
+    }
+
+    .card-text {
+      font-size: 16px;
+      line-height: 24px;
+    }
 
     .inline-icon {
       width: 2ex;
@@ -461,7 +475,15 @@
         <div><a href="#conclusion">Conclusion</a></div>
       </nav>
     </d-contents>
-
+    <div class="card text-white" style="width: 100%; background-color: hsl(200, 60%, 15%); margin-bottom: 2ex;">
+      <img class="card-img-top" src="images/pexels-photo-2952871-cropped.jpg" alt="Book shelf">
+      <div class="card-body">
+        <h4 class="card-title">Citation information</h4>
+        <p class="card-text">
+          This article contains results from previously published work and from unpublished preprints.
+          Cards like this one will guide you to the original sources for each section.</p>
+      </div>
+    </div>
     <p id="introduction">
       The potential dangers of artificial intelligence (AI) have been the subject of scientific, philosophical, and
       artistic debates for many decades, even centuries.
@@ -504,7 +526,7 @@
       Discussions ensuing from such stories are seldom factual, and in these discussions, AI systems are often talked up
       as autonomous agents with their own consciousness.
       However, at the moment the biggest danger of AI arguably still does not come from the AI alone, but from how
-      *humans* use and interact with an AI.
+      <em>humans</em> use and interact with an AI.
     </p>
     <p>
       In our transdisciplinary research project, we were interested in just that: how do people (laypersons, in
@@ -523,8 +545,8 @@
       how those techniques actually affect the user behavior, in particular that of lay users.
       Specifically, we were interested in how (visual) explanations for AI suggestions affect the <em>trust</em> of
       human lay users in these suggestions.
-      We, by the way, are a team of computer scientists interested in visualization and XAI and psychologists
-      interested in human&ndash;computer interaction.
+      We, by the way, are a team of psychologists interested in human&ndash;computer interaction and computer scientists
+      interested in visualization and XAI.
     </p>
     <p>
       Users of real-world AI systems, who are confronted with an AI's suggestion, face the problem of deciding whether
@@ -584,7 +606,7 @@
       Can you spot the important differences?
     </p>
     <div class="figcaption" id='doppelganger-checkbox'></div>
-    <figure class="fullscreen">
+    <figure class="fullscreen" style="margin-top: 0px;">
       <div class="d-flex justify-content-center" id='doppelganger-main' style="margin: 0 auto; width: 1200px;"></div>
       <div class="d-flex justify-content-center">
         <figcaption>
@@ -637,6 +659,21 @@
       Once we had fixed mushroom as our application scenario, it was time for designing the first user experiments.
     </p>
     <h2 id="study-anatomy">Anatomy of a Study</h2>
+    <div class="card text-white" style="width: 100%; background-color: hsl(200, 60%, 15%); margin-bottom: 2ex;">
+      <img class="card-img-top" src="images/pexels-photo-2952871-cropped.jpg" alt="Book shelf">
+      <div class="card-body">
+        <a href="https://doi.org/10.1016/j.chb.2022.107539" class="stretched-link"></a>
+        <h4 class="card-title">
+          Effects of Explainable Artificial Intelligence on trust and human behavior in a high-risk decision task
+        </h4>
+        <p class="card-text">
+          Benedikt Leichtmann, Christina Humer, Andreas Hinterreiter, Marc Streit, Martina Mara.
+        </p>
+        <p class="card-text">
+          Computers in Human Behavior, 139: 107539, DOI: 10.1016/j.chb.2022.107539, 2023.
+        </p>
+      </div>
+    </div>
     <p>
       At this point, our still somewhat vaguely formulated research question was "How do explanations affect user trust
       in a high-risk decisionmaking task?".
@@ -673,15 +710,14 @@
     </p>
     <div>
       <p>
-        First, we can explain the general principles and inner workings of the AI system to the user <d-cite
-          key="ng_ai_2021,long_what_2020"></d-cite>.
+        First, we can explain the general principles and inner workings of the AI system to the user.
         This way, a user should be able to better judge what a system, in general, is capable of and how trustworthy its
-        decisions are.
+        decisions are <d-cite key="ng_ai_2021,long_what_2020"></d-cite>.
         We called this type of explanation an &ldquo;educational intervention&rdquo;, so that our terminology would not
         be too confusing.
       </p>
       <p>
-        Second, we can explain individual outcomes using XAI methods <d-cite
+        Second, individual outcomes can be explained using XAI methods <d-cite
           key="miller_explanation_2019,long_what_2020"></d-cite>.
         There are many different types of explanation techniques, and choosing any of them was a tough ask.
         After lots of consideration we opted for a combination of techniques.
@@ -698,9 +734,7 @@
     <p>
       Because it was unclear how these two different approaches, an educational intervention and individual explanations
       of results, would compare to each other, we decided to go with a 2&nbsp;&times;&nbsp;2 between-subjects design
-      based on the
-      two
-      approaches.
+      based on the two approaches.
       Essentially, this meant that we would first split all our participants into two groups. We would give one group
       the educational intervention (i.e., they got some basic info on how our AI worked in general), and the other
       group would not get anything at all.
@@ -973,7 +1007,22 @@
     </figure>
 
     <h2 id="ars-study">Going Artistic</h2>
-
+    <div class="card text-white" style="width: 100%; background-color: hsl(200, 60%, 15%); margin-bottom: 2ex;">
+      <img class="card-img-top" src="images/pexels-photo-2952871-cropped.jpg" alt="Book shelf">
+      <div class="card-body">
+        <a href="https://doi.org/10.1080/10447318.2023.2221605" class="stretched-link"></a>
+        <h4 class="card-title">
+          Explainable Artificial Intelligence improves human decision-making: Results from a mushroom picking experiment
+          at a public art festival
+        </h4>
+        <p class="card-text">
+          Benedikt Leichtmann, Andreas Hinterreiter, Christina Humer, Marc Streit, Martina Mara.
+        </p>
+        <p class="card-text">
+          International Journal of Human&ndash;Computer Interaction, DOI: 10.1080/10447318.2023.2221605, 2023.
+        </p>
+      </div>
+    </div>
     <p>
       Every year, the city of Linz in Austria is home to the <a href="https://ars.electronica.art/festival/en/">Ars
         Electronica Festival</a>&mdash;a festival for art, technology, and society.
@@ -1183,6 +1232,22 @@
     </figure>
 
     <h2 id="study-3">What's the Difference?</h2>
+    <div class="card text-white" style="width: 100%; background-color: hsl(200, 60%, 15%); margin-bottom: 2ex;">
+      <img class="card-img-top" src="images/pexels-photo-2952871-cropped.jpg" alt="Book shelf">
+      <div class="card-body">
+        <a href="https://doi.org/10.31219/osf.io/h6dwz" class="stretched-link"></a>
+        <h4 class="card-title">
+          Comparing Effects of Attribution-based, Example-based, and Feature-based Explanation Methods on AI-Assisted
+          Decision-Making
+        </h4>
+        <p class="card-text">
+          Christina Humer, Andreas Hinterreiter, Benedikt Leichtmann, Martina Mara, Marc Streit.
+        </p>
+        <p class="card-text">
+          OSF Preprint, DOI: 10.31219/osf.io/h6dwz, 2022.
+        </p>
+      </div>
+    </div>
 
     <p>
       After our first online study and the gamified replication study at the festival, we now had reliable results about
@@ -1209,7 +1274,7 @@
       We calculated the most important units of our neural network for each classification.
       We then assigned semantic labels to the units and showed the activation maps of the units along with the labels.
       With this new interface variant, we now had four <em>Forestly</em> variants: no explanations, nearest neighbors
-      (now without Grad-CAM), Grad-CAM (now without nearest neighbors), and the new semantic explanations:
+      (now without Grad-CAM), Grad-CAM (now without nearest neighbors), and the new semantic explanations.
     </p>
     <figure class="fullscreen d-flex justify-content-around">
       <div class="d-flex flex-column" style="width: 17%">
@@ -1247,7 +1312,7 @@
     </figure>
 
     <p>
-      In our third study, we divided our participants into four groups. Each group received on of the four
+      In our third study, we divided our participants into four groups. Each group received one of the four
       layout variants shown above. But there was one more thing we wanted to explore in our study ...
     </p>
 
@@ -1467,7 +1532,7 @@
       However, the accuracy of the model (and if and how you communicate it to the user) might be an important mediating
       factor for how much users trust an AI.
       There are many more potential mediating factors.
-      There are also many more applications scenarios apart form mushrooms.
+      There are also many more application scenarios apart from mushrooms.
       It will be interesting to see how our results generalize in future studies.
     </p>
     <p>
@@ -1485,7 +1550,7 @@
       towards a more responsible use of AI support systems.
       Correctly designed explanations can lead users to trusting an AI more adequately.
       As a result, we believe that XAI can and will play a big role in the future for trust calibration.
-      The Erewhonians chose to relinquishing machines altogether because they saw too many risks.
+      The Erewhonians chose to relinquish machines altogether because they saw too many risks.
       But if people learn when to trust and when not to trust an AI, we will be able to keep artificially intelligent
       systems as effective tools in our society.
     </p>
@@ -1509,21 +1574,23 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
   <script type="module">
     import define from "./notebook/index.js";
     import { Runtime, Library, Inspector } from "./notebook/runtime.js";
 
-    const main = new Runtime().module(define, name => {
+    const runtime = new Runtime(Object.assign(new Library, { width: 1152 }));
+
+    const main = runtime.module(define, name => {
       switch (name) {
         case "viewof toggleHideShow": {
           return new Inspector(document.querySelector("#doppelganger-checkbox"))
@@ -1532,7 +1599,14 @@
           return true
         };
         case "mushroomDoppelganger": {
-          return new Inspector(document.querySelector("#doppelganger-main"))
+          return {
+            fulfilled(value) {
+              value.removeAttribute("width");
+              value.removeAttribute("height");
+              document.querySelector("#doppelganger-main").replaceChildren(value);
+            }
+          };
+          // return new Inspector(document.querySelector("#doppelganger-main"))
         };
         case "forestlyInterface": {
           return new Inspector(document.querySelector("#forestly-interface"))
@@ -1544,7 +1618,29 @@
           return new Inspector(document.querySelector("#study-1-y"))
         };
         case "plotAnyTwo": {
-          return new Inspector(document.querySelector("#study-1-plot"))
+          return {
+            fulfilled(value) {
+              const children = value.childNodes;
+              if (children.length == 1) {
+                const barChart = children[0]
+                barChart.setAttribute("style", "background: none;")
+                barChart.removeChild(barChart.getElementsByTagName("style")[0]);
+              } else {
+                const legend = children[0]
+                legend.removeChild(legend.getElementsByTagName("style")[0]);
+                const heatmap = children[1]
+                heatmap.setAttribute("style", "background: none;")
+                heatmap.removeChild(heatmap.getElementsByTagName("style")[0]);
+              };
+              console.log(children.length);
+              [].forEach.call(children, function (child) {
+                child.removeAttribute("width");
+                child.removeAttribute("height");
+              });
+              document.querySelector("#study-1-plot").replaceChildren(value);
+            }
+          };
+          // return new Inspector(document.querySelector("#study-1-plot"))
         };
         case "blamingLegend": {
           return new Inspector(document.querySelector("#blaming-legend"))

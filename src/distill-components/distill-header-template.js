@@ -1,10 +1,11 @@
-import logo from '../assets/vds-lab-logo-notex-opt.svg';
+import vdsLogo from '../assets/vds-lab-logo-opt.svg';
+import roboLogo from '../assets/robopsychology-lab-logo.svg';
 
 export const headerTemplate = `
 <style>
 distill-header {
   position: relative;
-  height: 60px;
+  height: 80px;
   background-color: hsl(200, 60%, 15%);
   width: 100%;
   box-sizing: border-box;
@@ -14,7 +15,7 @@ distill-header {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
 }
 distill-header .content {
-  height: 70px;
+  height: 80px;
   grid-column: page;
 }
 distill-header a {
@@ -29,18 +30,32 @@ distill-header a:hover {
   color: rgba(255, 255, 255, 1);
 }
 distill-header svg {
-  width: 32px;
-  position: relative;
-  top: 8px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   margin-right: 2px;
+}
+distill-header .logo svg path {
+  fill: rgba(255, 255, 255, 0.9)
+}
+distill-header .vdslogo svg {
+  height: 45px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  margin-right: 2px;
+}
+distill-header .vdslogo svg path {
+  fill: rgba(255, 255, 255, 0.9)
 }
 @media(min-width: 1080px) {
   distill-header {
-    height: 70px;
+    height: 80px;
   }
   distill-header a {
-    height: 70px;
-    line-height: 70px;
+    height: 80px;
+    line-height: 80px;
     padding: 28px 0;
   }
   distill-header .logo {
@@ -61,9 +76,11 @@ distill-header .nav a {
 }
 </style>
 <div class="content">
-  <a href="https://jku-vds-lab.at" class="logo">
-    ${logo}
-    JKU Visual Data Science Lab
+  <a href="" class="logo">
+    ${roboLogo}
+  </a>
+  <a href="https://jku-vds-lab.at" class="vdslogo" style="float: right;">
+    ${vdsLogo}
   </a>
 
 </div>
