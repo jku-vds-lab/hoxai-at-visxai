@@ -499,10 +499,10 @@
       intense concerns about the powers and dangers of AI.
     </p>
     <p>
-      Earlier this year, GPT-4 convinced a clikcworker to solve a CAPTCHA for it by pretending to be a visually impaired
+      Earlier this year, GPT-4 convinced a clickworker to solve a CAPTCHA for it by pretending to be a visually impaired
       human <d-cite key="bi_chatgpt,gpt4"></d-cite>.
       Discussions ensuing from such stories are seldom factual, and in these discussions, AI systems are often talked up
-      as autonomous agents with their own conciousness.
+      as autonomous agents with their own consciousness.
       However, at the moment the biggest danger of AI arguably still does not come from the AI alone, but from how
       *humans* use and interact with an AI.
     </p>
@@ -552,7 +552,7 @@
       </li>
       <li>
         <b>It had to be relatable.</b>
-        We wanted to conduct quantitive user studies, recruiting a broad and diverse range of
+        We wanted to conduct quantitative user studies, recruiting a broad and diverse range of
         participants. Expert domains, such as medical image analysis, were out of the question.
       </li>
       <li>
@@ -567,13 +567,13 @@
     <p>
       Mushrooms are not only delicious, it's also fun to collect them out in nature.
       Soon after mushroom hunting was brought up in our discussions about potential application scenarios, we realized
-      that it perfectly fits the creiteria outlined above.
+      that it perfectly fits the criteria outlined above.
     </p>
     <p>
       <b>Something is at stake.</b>
       While it's fun to collect mushrooms, there's quite a bit of danger associated with it.
       Many edible mushrooms have inedible or poisonous doppelgangers.
-      Sometimes, only minute differences in appearance tell a seasoned mushroom collecter which species they've
+      Sometimes, only minute differences in appearance tell a seasoned mushroom collector which species they've
       encountered.
       And the species can make the difference between delicious food and deadly poison.
       Take a look at the two images below.
@@ -610,7 +610,7 @@
     </p>
     <p>
       <b>It's relatable.</b>
-      Even though most experimental studies have a certain degree of artificality about them (because most people
+      Even though most experimental studies have a certain degree of artificiality about them (because most people
       consider
       it unethical to let people endanger themselves for science's sake), it's important that study participants can
       relate to the task at hand.
@@ -630,9 +630,8 @@
       classification, apps can only work with the visual cues.
       These include relative sizes, colors, and textures of the different mushroom parts (e.g., stem, cap, lamellas),
       potential discoloration, surrounding fauna, and others.
-      This ment that a visual, image-based classification task, while not entirely realistic, was at least possible
-      within
-      the use case of mushroom hunting.
+      This meant that a visual, image-based classification task, while not entirely realistic, was at least possible
+      within the use case of mushroom hunting.
     </p>
     <p>
       Once we had fixed mushroom as our application scenario, it was time for designing the first user experiments.
@@ -657,7 +656,7 @@
       <li>What exactly do we mean by explanations?</li>
       <li>Do we choose a between- or within-subject design?</li>
       <li>Which parameters do we manipulate?</li>
-      <li>How exactly do we implement the mushroom picking?</li>
+      <li>How exactly do we implement the mushroom picking task?</li>
       <li>What are external factors that we need to consider?</li>
     </ul>
     <p>
@@ -692,7 +691,7 @@
     <aside>
       Note that this goes a bit into the direction of so-called global explanations.
       However, we are speaking about explaining complex ML models to lay users who might not know anything about machine
-      learning, so necessarily the educational intervention needs to be very high-level.
+      learning, so the educational intervention needs to be very high-level.
     </aside>
 
     <h3 id="study-conditions">Splitting (for) the Difference</h3>
@@ -703,7 +702,7 @@
       two
       approaches.
       Essentially, this meant that we would first split all our participants into two groups. We would give one group
-      the educational intervention (i.e., they got some basic infos on how our AI worked in general), and the other
+      the educational intervention (i.e., they got some basic info on how our AI worked in general), and the other
       group would not get anything at all.
       Then, we would split each of the two groups again, with one half of each group getting individual explanations of
       the AI suggestions, and the other half only getting the plain AI suggestions.
@@ -720,15 +719,15 @@
       Now it was up to the ML-focused members of our group to train such a model and decide on all its different
       parameters.
       In the end, we opted for a ResNet 50 model <d-cite key="he_deep_2016"></d-cite> pretrained on ImageNet data and
-      finetuned on several thousand mushroom
+      fine-tuned on several thousand mushroom
       images that we collected from various sources (including the <em>Danish Svampeatlas</em> <d-cite
         key="danish_svampeatlas"></d-cite>).
       We also made sure that our model was bad enough to get some classifications wrong, as we wanted wrong AI
       suggestions to be reflected in the study.
     </p>
     <p>
-      Our study design with the 2&nbsp;&times;&nbsp;2 split based on the types of explanatory information also ment that
-      we only got one chance for each of the two.
+      Our study design with the 2&nbsp;&times;&nbsp;2 split based on the types of explanatory information also meant
+      that we only got one chance for each of the two.
       We had to fix one design for our educational intervention, and we had to fix one design for our XAI "interface".
       We use the term <em>interface</em> here for a reason.
       We decided that we wanted to show the results of our AI to the participants in the form of a fictitious app
@@ -785,7 +784,7 @@
     <h3 id="study-pretests">Tried and Tested</h3>
     <p>
       We had decided early on in our project that we were targeting a broad and diverse range of study participants.
-      This ment that we could not expect any prior knowledge, neither about mushrooms nor about AI.
+      This meant that we could not expect any prior knowledge, neither about mushrooms nor about AI.
       To understand if the effects of explanations vary with different levels of prior knowledge about either topic, we
       constructed pretests.
     </p>
@@ -815,12 +814,12 @@
       incorrect suggestions.
       Even though a user cannot know which is the case, we still wanted correct and incorrect AI predictions to be
       reflected among our items.
-      Additionally, we thought it could make a big difference wheter certain mushroom species were well known, and
+      Additionally, we thought it could make a big difference whether certain mushroom species were well known, and
       whether
       the AI's suggestion was &ldquo;edible&rdquo; or &ldquo;poisonous&rdquo;.
     </p>
     <p>
-      In a laborious process, we brwosed through hundreds of input images, predictions, and explanations, attempting to
+      In a laborious process, we browsed through hundreds of input images, predictions, and explanations, attempting to
       choose the ideal subset of stimuli.
       To increase the potential risk of incorrect classifications, we had limited ourselves to mushroom species that had
       known doppelgangers.
@@ -949,7 +948,7 @@
           <ul>
             <li>
               Our educational intervention had no statistically significant effect. Participants who received it did not
-              perform any different in terms of decision correctness.
+              perform any differently in terms of decision correctness.
             </li>
             <li>
               XAI did affect the performance. Participants who received explanations along with the AI suggestions
@@ -977,10 +976,10 @@
 
     <p>
       Every year, the city of Linz in Austria is home to the <a href="https://ars.electronica.art/festival/en/">Ars
-        Electronica Festival</a>&mdash;a festical for art, technology, and society.
+        Electronica Festival</a>&mdash;a festival for art, technology, and society.
       For several years, the campus of our university (<a href="https://www.jku.at/">Johannes Kepler University</a>) was
       one of the main sites of the festival.
-      In those years, university members could apply for a an exhibition site to showcase artistic aspects of their
+      In those years, university members could apply for an exhibition site to showcase artistic aspects of their
       research projects.
       In the <a href="https://ars.electronica.art/newdigitaldeal/en/">2021 edition</a>, we used this opportunity to be
       present with our research project.
@@ -1014,7 +1013,7 @@
       As stimuli, we used the subset of 10 mushrooms that had the most variance.
       Through the shortened pretests and the fewer classification items, we could cut down the completion time of the
       survey.
-      This was necessary, because festival visitors naturally could not spend too much time at our installtion, and the
+      This was necessary, because festival visitors naturally could not spend too much time at our installation, and the
       newly introduced task of searching for the mushrooms would also take some time.
       After completing the game (i.e., finding and scanning 10 mushrooms), visitors would get feedback on their result.
       Below you can see the different outcomes of the game.
@@ -1065,19 +1064,19 @@
     <h3 id="ars-forest">Wood Chips & Fragrance Dispensers</h3>
 
     <p>
-      The <em>AI Forest</em> installation consisted of an artifical forest envisioned by German artist Birke van
+      The <em>AI Forest</em> installation consisted of an artificial forest envisioned by German artist Birke van
       Maartens.
       It was constructed by a team of stage builders from various materials.
       Pedestals made from wood and vinyl served as &ldquo;islands&rdquo; on which different plants were placed.
       In total, we used 80 potted ivy and fern plants and around 30 large tree branches, which emulated trees.
       Visitors, each holding a tablet computer with the game installed, walked between these islands on wood chips.
       Hidden throughout the forest were not only the mushroom models&mdash;which had QR codes printed on them, so that
-      they could be scanned with the tablets&mdash;but also speakers and fragrance dspensers.
+      they could be scanned with the tablets&mdash;but also speakers and fragrance dispensers.
       The speakers played bird songs from Austrian bird species, rustling wind noises, and one played the sounds of a
       nearby stream of water.
       These sounds were specially curated by audio artist Kenji Tanaka.
       The fragrance dispensers released vapor smelling of fir, spruce, and different pine trees.
-      Below you can see get some impressions of how the whole installation looked like.
+      Below you can get some impressions of how the whole installation looked like.
     </p>
 
     <d-figure>
@@ -1160,9 +1159,9 @@
           <ul>
             <li>
               We could reproduce the main result from our first study. Participants who got the XAI interface again
-              performed beter in terms of classification correctness than participants who got the plain interface.
-              This is true for both the edibility assessment and the acutal pick-up decision (remember that we split
-              the identifaction task up into two questions.)
+              performed better in terms of classification correctness than participants who got the plain interface.
+              This is true for both the edibility assessment and the actual pick-up decision (remember that we split
+              the identification task up into two questions.)
             </li>
             <li>
               We could not reproduce our previous results regarding self-reported trust. This time, participants who
@@ -1190,8 +1189,8 @@
       our XAI interface helping users to make more correct decisions (i.e., to trust the AI more adequately).
       We mentioned <a href="#study-conditions">earlier</a> that when we designed our XAI interface, we opted for a
       combination of nearest neighbors and Grad-CAM.
-      While we did know now that this combination worked, we did not know if that was nearest neighbors worked, Grad-CAM
-      worked, or the combination worked.
+      While we did know now that this combination worked, we did not know if that was because nearest neighbors worked,
+      Grad-CAM worked, or the combination worked.
       We set out to perform a third study with new <em>Forestly</em> interfaces, in each of which only <em>one</em>
       explanation technique was used.
       This also gave us the opportunity to study an additional explanation technique.
@@ -1268,11 +1267,11 @@
       The other kind of explanations, which made things seem a bit more shady, would be more helpful in cases when the
       AI was incorrect. You could then realize that something maybe wasn't quite right and overrule the AI.
       For our selection of mushroom stimuli, we classified the explanations into the two different types and made sure
-      to include some itmes of each kind.
+      to include some items of each kind.
     </p>
     <p>
       Before we get to our classification and the experimental results, you can play the game that our participants
-      played in this thrid study. We liked the gamification from the festival study, so we decided to reuse the game
+      played in this third study. We liked the gamification from the festival study, so we decided to reuse the game
       idea and update the game with the new interfaces:
     </p>
     <figure class="fullscreen">
@@ -1292,18 +1291,18 @@
       We conducted the third study as an online experiment with 501 participants.
       Below are the summarized insights of the study, along with an interactive widget for exploring the quantitative
       results.
-      In the tabel, each row lists one of the mushroom items from the study, with indications for whether the AI
+      In the table, each row lists one of the mushroom items from the study, with indications for whether the AI
       suggestion was correct (<img class="inline-icon" src="./images/icon-ai-correct.png" alt="AI correct icon" />) or
       incorrect (<img class="inline-icon" src="./images/icon-ai-incorrect.png" alt="AI incorrect icon" />), whether the
-      mushroom depicated was actually
+      mushroom depicted was actually
       edible (<img class="inline-icon" src="./images/icon-edible.png" alt="Edible icon" />) or poisonous (<img
         class="inline-icon" src="./images/icon-poisonous.png" alt="Poisonous icon" />), and whether we deemed the
       explanation to be
       reassuring (<img class="inline-icon" src="./images/icon-xai-aligned.png" alt="Explanation reassuring icon" />; the
-      explanation fits with AI suggetsion like two pieces of a puzzle) or to raise concerns (<img class="inline-icon"
+      explanation fits with AI suggestion like two pieces of a puzzle) or to raise concerns (<img class="inline-icon"
         src="./images/icon-xai-notaligned.png" alt="Explanation raises concerns icon" />).
-      The two rightmost columns of the table show hom many participants assumed the mushroom to be edible and how many
-      picked it up, respecitvely.
+      The two rightmost columns of the table show how many participants assumed the mushroom to be edible and how many
+      picked it up, respectively.
       The bar chart in the top left of the widget shows the average correctness of the pick-up decision faceted by the
       four experimental groups and by the selection in the table.
       Clicking on the button in the head of a row facets the results by the value of that row. For example, if you
@@ -1316,7 +1315,7 @@
       screens for the respective variant. Finally, you can create your own item split by simply selecting items in the
       leftmost column of the table.
       For example, select the two items with a concerning nearest-neighbor explanation and an incorrect AI suggestion,
-      and notice how mush higher the correctness was for those items for the nearest-neighbor group.
+      and notice how much higher the correctness was for those items for the nearest-neighbor group.
     </p>
     <figure class="fullscreen-diagram">
       <div class="d-flex flex-row justify-content-center align-items-center">
@@ -1346,7 +1345,7 @@
                 alt="Explanation reassuring icon" /> or <img class="inline-icon" src="./images/icon-ai-incorrect.png"
                 alt="AI incorrect icon" />+<img class="inline-icon" src="./images/icon-xai-notaligned.png"
                 alt="Explanation raises concerns icon" />) led to better performance (i.e., more adequate trust).
-              This was again only statistically significant for nearest neighbors, but a similar tendecy was
+              This was again only statistically significant for nearest neighbors, but a similar tendency was
               observable for the semantic explanation.
             </li>
           </ul>
@@ -1361,8 +1360,8 @@
     <h2 id="blaming">Who's to Blame?</h2>
 
     <p>
-      In <a href="#endscreen-figure">one of our game's endscreens</a>&mdash;the one for the case of at least one
-      poisonous mushrooms picked up&mdash;the toxicity of the stew is apparent. In real life, unfortunately, a poisonous
+      In <a href="#endscreen-figure">one of our game's end screens</a>&mdash;the one for the case of at least one
+      poisonous mushroom picked up&mdash;the toxicity of the stew is apparent. In real life, unfortunately, a poisonous
       stew does not emit green vapor and skull symbols. On the contrary, for many mushrooms you might not taste any
       difference and only find out when it's too late. If you collected the mushrooms with AI assistance and ended up
       poisoning one of your dinner guests, who would you blame?
@@ -1376,10 +1375,10 @@
       vomiting and diarrhea.
     </blockquote>
     <p>
-      We then asked the participants how mush each agent in this scenario was to blame.
+      We then asked the participants how much each agent in this scenario was to blame.
       The different agents here are the participant themself, the AI, the AI's developers, the poisoned friend.
-      In addition to the blaming questions, we also asked participants in one of the studies how they viewed artifically
-      intelligent agents in general.
+      In addition to the blaming questions, we also asked participants in one of the studies how they viewed
+      artificially intelligent agents in general.
       These are the results:
     </p>
     <figure class="fullscreen-diagram">
@@ -1418,7 +1417,7 @@
           <div id="blaming-network"></div>
           <div>
             <figcaption>
-              Network model of moral reasoning in the fictitious poisoning scneario. Hover over the nodes to find out
+              Network model of moral reasoning in the fictitious poisoning scenario. Hover over the nodes to find out
               what they stand for.
             </figcaption>
           </div>
@@ -1462,9 +1461,9 @@
     </p>
     <p>
       <b>There's much more to do.</b> Designing user studies is difficult and comes with many, many choices.
-      A single study, or even a whole research project, can only focus on a few dependent and indepentent variables.
+      A single study, or even a whole research project, can only focus on a few dependent and independent variables.
       All others have to be left fixed as control variables.
-      In our experiments, this ment that we only used one specific model with a fixed accuracy.
+      In our experiments, this meant that we only used one specific model with a fixed accuracy.
       However, the accuracy of the model (and if and how you communicate it to the user) might be an important mediating
       factor for how much users trust an AI.
       There are many more potential mediating factors.
@@ -1487,7 +1486,7 @@
       Correctly designed explanations can lead users to trusting an AI more adequately.
       As a result, we believe that XAI can and will play a big role in the future for trust calibration.
       The Erewhonians chose to relinquishing machines altogether because they saw too many risks.
-      But if people learn when to trust and when not to trust an AI, we will be able to keep artifically intelligent
+      But if people learn when to trust and when not to trust an AI, we will be able to keep artificially intelligent
       systems as effective tools in our society.
     </p>
 
