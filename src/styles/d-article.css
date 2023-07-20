@@ -135,6 +135,7 @@ d-article a {
 
 d-article a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  text-decoration: none;
 }
 
 d-article .link {

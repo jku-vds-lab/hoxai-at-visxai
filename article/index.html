@@ -23,13 +23,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf8">
   <style>
-    /* inline icons */
+    /* own stuffinline icons */
 
     .inline-icon {
       width: 2ex;
       height: 2ex;
       margin-left: 0.16em;
       margin-right: 0.16em;
+    }
+
+    .side-caption {
+      margin-top: 1ex;
+    }
+
+    .subcaption {
+      margin-top: 1.5ex;
+    }
+
+    @media (max-width: 1100px) {
+      .fullscreen {
+        margin-left: auto;
+        margin-right: auto;
+        grid-column: screen;
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .fullscreen {
+        margin-left: auto;
+        margin-right: auto;
+        grid-column: screen;
+        width: 85%;
+        max-width: 2000px;
+      }
     }
 
     /* bootstrap modal */
@@ -201,13 +228,13 @@
       border-bottom: none;
     }
 
-    .fullscreen {
+    /* .fullscreen {
       margin-left: auto;
       margin-right: auto;
       grid-column: screen;
       width: 100%;
       max-width: 2000px;
-    }
+    } */
 
     /* ****************************************
      * TOC
@@ -383,7 +410,11 @@
   </d-front-matter>
   <d-title>
     <p>Reflections on a Transdisciplinary Study on XAI and Trust</p>
-    <figure style="grid-column: page; margin: 1rem 0;"><img src="images/hoxai-teaser.png" style="width:100%;" />
+    <figure class="d-flex justify-content-around" style="grid-column: page; margin: 1rem 0;">
+      <img src="images/hoxai-teaser-1.jpg" style="width:22%;" />
+      <img src="images/hoxai-teaser-2.jpg" style="width:22%;" />
+      <img src="images/hoxai-teaser-3.jpg" style="width:22%;" />
+      <img src="images/hoxai-teaser-4.jpg" style="width:22%;" />
     </figure>
     <p>
       Does explainability change how users interact with an artificially intelligent agent?
@@ -461,7 +492,7 @@
     </div>
     <aside>
       <a href="https://en.wikipedia.org/wiki/Erewhon"><img src="images/erewhon-cover.jpg" height="200px"></a>
-      <p style="margin-top: 5px;">First edition cover of <em>Erewhon</em>.</p>
+      <p class="side-caption">First edition cover of <em>Erewhon</em>.</p>
     </aside>
     <p>
       Indeed, recent leaps in the quality of generative models like DALL·E 2, Midjourney, or ChatGPT have sparked
@@ -552,16 +583,6 @@
       Eating around 30 grams of it will kill you.
       Can you spot the important differences?
     </p>
-    <!-- <figure class="fullscreen-diagram">
-      <iframe width="100%" height="524" frameborder="0"
-        src="https://observablehq.com/embed/b0cfd08fe215d80d@1092?cells=mushroomDoppelganger"></iframe>
-      <iframe width="100%" height="101" frameborder="0"
-        src="https://observablehq.com/embed/b0cfd08fe215d80d@1092?cells=viewof+toggleHideShow"></iframe>
-      <figcaption>
-        Can you tell the differences between a parasol mushroom (<em>macrolepiota procera</em>) and a death cap
-        (<em>aminata phalloides</em>)?
-      </figcaption>
-    </figure> -->
     <div class="figcaption" id='doppelganger-checkbox'></div>
     <figure class="fullscreen">
       <div class="d-flex justify-content-center" id='doppelganger-main' style="margin: 0 auto; width: 1200px;"></div>
@@ -588,7 +609,7 @@
       This makes mushroom hunting a nice use case for studying trust in the context of XAI.
     </p>
     <p>
-      <b>It's relatebale.</b>
+      <b>It's relatable.</b>
       Even though most experimental studies have a certain degree of artificality about them (because most people
       consider
       it unethical to let people endanger themselves for science's sake), it's important that study participants can
@@ -715,7 +736,7 @@
     </p>
     <aside>
       <img src="images/forestly-logo.svg" width="100%" style="max-width: 200px;" />
-      <p style="margin-top: 5px;">
+      <p class="side-caption">
         Logo of the fictitious <em>Forestly</em> app.
       </p>
     </aside>
@@ -735,7 +756,7 @@
     <aside>
       <img src="images/educational-intervention.svg" data-toggle="modal" data-target="#edu-modal"
         style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2); max-width: 200px;" />
-      <p style="margin-top: 5px;">Educational intervention designed for the first study (click to expand).</p>
+      <p class="side-caption">Educational intervention designed for the first study (click to expand).</p>
     </aside>
     <figure class="fullscreen">
       <div class="d-flex justify-content-center" id="forestly-interface" style="margin: 0 auto; width: 800px;"></div>
@@ -917,8 +938,8 @@
       studies.
       Below we summarize the most important results, but you can also play around with the interactive plotting tool to
       explore different aspects of our data.
-      For example, you can verify the correlation between the results of the AI knowledge test and those of the
-      &ldquo;task-specific AI comprehension&rdquo; test.
+      For example, you can <a href="#study-1-plot" id="test-corr">verify the correlation between the results of the AI
+        knowledge test and those of the &ldquo;task-specific AI comprehension&rdquo; test</a>.
     </p>
 
     <figure class="fullscreen-diagram">
@@ -927,7 +948,7 @@
           <h4>Results from the First Study</h4>
           <ul>
             <li>
-              Our educational intervention had no stistically significant effect. Participants who received it did not
+              Our educational intervention had no statistically significant effect. Participants who received it did not
               perform any different in terms of decision correctness.
             </li>
             <li>
@@ -998,44 +1019,41 @@
       After completing the game (i.e., finding and scanning 10 mushrooms), visitors would get feedback on their result.
       Below you can see the different outcomes of the game.
     </p>
-    <figure id="endscreen-figure" class="fullscreen d-flex justify-content-center">
-      <div class="d-flex justify-content-center" style="width: 1700px">
-        <div class="d-flex flex-column" style="width: 20%; margin-right: 5%;">
-          <img src="./images/Endscenario-1.png"
-            alt="End screen for players collecting all edible mushrooms and no poisonous ones.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              Success! The player collected all the edible mushrooms and no poisonous ones. The stew turned out
-              great!
-            </figcaption>
-          </div>
+    <figure id="endscreen-figure" class="fullscreen d-flex justify-content-around">
+      <div class="d-flex flex-column" style="width: 20%"">
+        <img src=" ./images/Endscenario-1.png"
+        alt="End screen for players collecting all edible mushrooms and no poisonous ones.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style="text-align: center;">
+            Success! The player collected all the edible mushrooms and no poisonous ones. The stew turned out
+            great!
+          </figcaption>
         </div>
-        <div class="d-flex flex-column" style="width: 20%; margin-right: 5%;">
-          <img src="./images/Endscenario-2.png"
-            alt="End screen for players collecting some edible mushrooms and no poisonous ones.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              Pretty good. The player collected some edible mushrooms and no poisonous ones. The stew turned out fine.
-            </figcaption>
-          </div>
+      </div>
+      <div class="d-flex flex-column" style="width: 20%">
+        <img src="./images/Endscenario-2.png"
+          alt="End screen for players collecting some edible mushrooms and no poisonous ones.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style="text-align: center;">
+            Pretty good. The player collected some edible mushrooms and no poisonous ones. The stew turned out fine.
+          </figcaption>
         </div>
-        <div class="d-flex flex-column" style="width: 20%; margin-right: 5%;">
-          <img src="./images/Endscenario-3.png"
-            alt="End screen for players collecting at least one poisonous mushroom.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              Oh no! The player collected at least one poisonous mushroom. Maybe it would be better to order some pizza
-              instead?
-            </figcaption>
-          </div>
+      </div>
+      <div class="d-flex flex-column" style="width: 20%">
+        <img src="./images/Endscenario-3.png" alt="End screen for players collecting at least one poisonous mushroom.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style="text-align: center;">
+            Oh no! The player collected at least one poisonous mushroom. Maybe it would be better to order some pizza
+            instead?
+          </figcaption>
         </div>
-        <div class="d-flex flex-column" style="width: 20%;">
-          <img src="./images/Endscenario-4.png" alt="End screen for players collecting no mushrooms at all.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              Hmm ... The player did not collect any mushrooms at all. The dinners guests will stay hungry.
-            </figcaption>
-          </div>
+      </div>
+      <div class="d-flex flex-column" style="width: 20%;">
+        <img src="./images/Endscenario-4.png" alt="End screen for players collecting no mushrooms at all.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style="text-align: center;">
+            Hmm ... The player did not collect any mushrooms at all. The dinners guests will stay hungry.
+          </figcaption>
         </div>
       </div>
     </figure>
@@ -1194,39 +1212,37 @@
       With this new interface variant, we now had four <em>Forestly</em> variants: no explanations, nearest neighbors
       (now without Grad-CAM), Grad-CAM (now without nearest neighbors), and the new semantic explanations:
     </p>
-    <figure class="fullscreen d-flex justify-content-center">
-      <div class="d-flex justify-content-center" style="width: 1700px">
-        <div class="d-flex flex-column" style="width: 17%; margin-right: 5%;">
-          <img src="./images/onboarding-noexpl_EN.png" alt="Forestly variant without any explanations.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              Control interface with no explanations
-            </figcaption>
-          </div>
+    <figure class="fullscreen d-flex justify-content-around">
+      <div class="d-flex flex-column" style="width: 17%">
+        <img src="./images/onboarding-noexpl_EN.png" alt="Forestly variant without any explanations.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style=" text-align: center;">
+            Control interface with no explanations
+          </figcaption>
         </div>
-        <div class="d-flex flex-column" style="width: 17%; margin-right: 5%;">
-          <img src="./images/onboarding-nn_EN.png" alt="Forestly variant with nearest neighbor explanations.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              <em>Forestly</em> interface with nearest-neighbor explanations.
-            </figcaption>
-          </div>
+      </div>
+      <div class="d-flex flex-column" style="width: 17%">
+        <img src="./images/onboarding-nn_EN.png" alt="Forestly variant with nearest neighbor explanations.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style="text-align: center;">
+            <em>Forestly</em> interface with nearest-neighbor explanations.
+          </figcaption>
         </div>
-        <div class="d-flex flex-column" style="width: 17%; margin-right: 5%;">
-          <img src="./images/onboarding-gradcam_EN.png" alt="Forestly variant with Grad-CAM explanations.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              <em>Forestly</em> interface with Grad-CAM explanations.
-            </figcaption>
-          </div>
+      </div>
+      <div class="d-flex flex-column" style="width: 17%">
+        <img src="./images/onboarding-gradcam_EN.png" alt="Forestly variant with Grad-CAM explanations.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style="text-align: center;">
+            <em>Forestly</em> interface with Grad-CAM explanations.
+          </figcaption>
         </div>
-        <div class="d-flex flex-column" style="width: 17%;">
-          <img src="./images/onboarding-dissect_EN.png" alt="Forestly variant with semantic explanations.">
-          <div class="d-flex justify-content-center" style="margin-top: 20px;">
-            <figcaption style="text-align: center;">
-              <em>Forestly</em> interface with semantic explanations.
-            </figcaption>
-          </div>
+      </div>
+      <div class="d-flex flex-column" style="width: 17%;">
+        <img src="./images/onboarding-dissect_EN.png" alt="Forestly variant with semantic explanations.">
+        <div class="d-flex justify-content-center subcaption">
+          <figcaption style="text-align: center;">
+            <em>Forestly</em> interface with semantic explanations.
+          </figcaption>
         </div>
       </div>
     </figure>
@@ -1508,7 +1524,7 @@
     import define from "./notebook/index.js";
     import { Runtime, Library, Inspector } from "./notebook/runtime.js";
 
-    new Runtime().module(define, name => {
+    const main = new Runtime().module(define, name => {
       switch (name) {
         case "viewof toggleHideShow": {
           return new Inspector(document.querySelector("#doppelganger-checkbox"))
@@ -1545,6 +1561,18 @@
         };
       }
     });
+
+    document.getElementById("test-corr").addEventListener("click", setTestAxes, false);
+
+    function setTestAxes() {
+      const selectX = document.getElementById("oi-66c06c-2")
+      selectX.value = 10;
+      selectX.dispatchEvent(new Event("input", { bubbles: true }));
+      const selectY = document.getElementById("oi-66c06c-1")
+      selectY.value = 8;
+      selectY.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+
   </script>
 
 </body>

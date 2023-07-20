@@ -32,6 +32,7 @@ jobs:
         name: copy index.html to deploy folder (./dist)
         run: |
           cp article/index.html ./dist/
+          cp article/bibliography.bib ./dist/
           cp -r article/images ./dist/images
           cp -r article/notebook ./dist/notebook
       - 
