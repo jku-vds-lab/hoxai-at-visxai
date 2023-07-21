@@ -447,7 +447,7 @@
       psychologists.
       We chose the high-risk decisionmaking task of AI-assisted mushroom hunting to study the effects that explanations
       of AI suggestions have on user trust.
-      We present the summarized results of three studies, one of which was carried out in an unusual environment as part
+      We present an overview of three studies, one of which was carried out in an unusual environment as part
       of an art festival.
       Our results show that visual explanations can lead to more adequate trust in AI systems and thereby to an improved
       decision correctness.
@@ -992,7 +992,7 @@
           <p>
             The widget to the right lets you plot different attributes of our dataset collected from the first study.
             You can select attributes for the x-axis and the y-axis, resulting in either bar charts (for categorical
-            attribtues on the x-axis) or heatmaps (for numerical ones).
+            attributes on the x-axis) or heatmaps (for numerical ones).
             Here are some suggestions:
           </p>
           <ul>
@@ -1513,7 +1513,7 @@
       exhibition area.
     </p>
     <p>
-      We also want to express our veneration for everyone involved in the conceptualization and physcial construction of
+      We also want to express our veneration for everyone involved in the conceptualization and physical construction of
       the forest: Birke van Maartens, who created the imaginative artistic concept and the scenery design; Leonie
       Haasler and Gabriel Vitel for their diligent construction work; and Kenji Tanaka for the soothing sound design.
     </p>
@@ -1578,8 +1578,12 @@
     crossorigin="anonymous"></script>
 
   <script type="module">
-    import define from "./notebook/index.js";
-    import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+    // import define from "./notebook/index.js";
+    // import { Runtime, Library, Inspector } from "./notebook/runtime.js";
+
+    // use online version for now; fix later
+    import {Runtime, Library, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/d/b0cfd08fe215d80d@2062.js?v=3";
 
     const runtime = new Runtime(Object.assign(new Library, { width: 1152 }));
 
