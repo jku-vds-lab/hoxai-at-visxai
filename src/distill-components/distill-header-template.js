@@ -76,7 +76,7 @@ distill-header .nav a {
 }
 </style>
 <div class="content">
-  <a href="" class="logo">
+  <a href="https://www.jku.at/en/lit-robopsychology-lab/" class="logo">
     ${roboLogo}
   </a>
   <a href="https://jku-vds-lab.at" class="vdslogo" style="float: right;">
