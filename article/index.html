@@ -84,6 +84,14 @@
       }
     }
 
+    figure table img {
+      width: 30px;
+    }
+
+    .oi-66c06c-table thead th {
+      background: none !important;
+    }
+
     /* bootstrap modal */
 
     .modal {
@@ -1376,7 +1384,7 @@
     </p>
     <figure class="fullscreen-diagram">
       <div class="d-flex flex-row justify-content-center align-items-center">
-        <div class="d-flex flex-column" style="width: 25%; margin-right: 5%;">
+        <div class="d-flex flex-column" style="width: 30%; margin-right: 5%;">
           <h4>Explore the Data from the Third Study</h4>
           <p>
             In the table on the right, each row lists one of the mushroom items from the study, with indications for
@@ -1417,12 +1425,12 @@
             nearest-neighbor group.
           </p>
           <figcaption>
-            <b>Caution!</b> This plot does not indicate if results are statistically significant. For the detailed
+            <b>Caution!</b> This plot does not indicate if the results are statistically significant. For the detailed
             analysis, <a href="https://doi.org/10.31219/osf.io/h6dwz">check the preprint</a> <d-cite
               key="humer_reassuring_2023"></d-cite>.
           </figcaption>
         </div>
-        <div class="d-flex flex-column" style="width: 1152">
+        <div class="d-flex flex-column" style="width: 55%">
           <div id="study-3-plot"></div>
           <div id="study-3-table"></div>
         </div>
@@ -1588,12 +1596,21 @@
 
     // use online version for now; fix later
     import { Runtime, Library, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-    import define from "https://api.observablehq.com/d/b0cfd08fe215d80d@2062.js?v=3";
+    import define from "https://api.observablehq.com/d/b0cfd08fe215d80d@2076.js?v=3";
 
     const runtime = new Runtime(Object.assign(new Library, { width: 1152 }));
 
+    var setTableSelection;
+
     const main = runtime.module(define, name => {
       switch (name) {
+        case "updateSplit": {
+          return {
+            fulfilled(value, name) {
+              setTableSelection = value;
+            }
+          };
+        };
         case "viewof toggleHideShow": {
           return new Inspector(document.querySelector("#doppelganger-checkbox"))
         };
@@ -1660,10 +1677,24 @@
         //   return new Inspector(document.querySelector("#blaming-network"))
         // };
         case "plotAndImage": {
-          return new Inspector(document.querySelector("#study-3-plot"))
+          const inspector = new Inspector(document.querySelector("#study-3-plot"))
+          return {
+            pending() {
+              inspector.pending();
+            },
+            fulfilled(value, name) {
+              const plot = value.getElementsByTagName("svg")[0];
+              plot.setAttribute("style", "background: none;")
+              plot.removeChild(plot.getElementsByTagName("style")[0]);
+              inspector.fulfilled(value, name);
+            },
+            rejected(error, name) {
+              inspector.rejected(error, name);
+            }
+          };
         };
         case "viewof mushroomItems": {
-          return new Inspector(document.querySelector("#study-3-table"))
+          return new Inspector(document.querySelector("#study-3-table"));
         };
       }
     });
@@ -1684,12 +1715,9 @@
       selectY.dispatchEvent(new Event("input", { bubbles: true }));
     }
 
-    document.getElementById("s3-incorrect").addEventListener("click", () => setTableSelection(), false);
-    document.getElementById("s3-nnhelpful").addEventListener("click", () => setTableSelection(), false);
+    document.getElementById("s3-incorrect").addEventListener("click", () => setTableSelection([3, 4, 5, 6, 7, 8]), false);
+    document.getElementById("s3-nnhelpful").addEventListener("click", () => setTableSelection([1, 2]), false);
 
-    function setTableSelection(indices) {
-
-    }
   </script>
 
 </body>
