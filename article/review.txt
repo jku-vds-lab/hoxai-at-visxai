@@ -1,0 +1,35 @@
+[X] The introduction mentions dangers of generative models, yet the paper focuses on dangers of classification models. The explanation would benefit from examples of misclassification (see Northpointe COMPAS [1], Gender Shades [2], Adversarial Patches [3] to start; there may be more directly relevant examples of misclassification to consider), since generative models seem less relevant here.
+
+[ ] The introduction would benefit from greater focus on data visualization and its role in trust & XAI. The TREX workshop [8] may be of interest.
+
+[X] Continuing in this section, “the biggest danger of AI arguably still does not come from the AI alone, but from how humans use and interact with an AI” would benefit from citations e.g. from researchers like Timnit Gebru [4] and Emily M. Bender [5].
+
+[X] In reference to replication studies in the conclusion, the authors “hope that the visualization community will follow suit”. This would benefit from references to existing publications on replicability in visualization research [7], lest readers think this has not been introduced as a topic of concern. Perhaps “will *continue* to…”?
+
+[X] I found the use of “AI’s suggestion” to be an odd phrasing; the model is making a prediction, or has an output, but ‘suggestion’ seems to be somewhat anthropomorphizing, and mischaracterizes the output (given that the output is not an action like “eat this mushroom” but rather a classification of “edible”). See [9]
+
+[ ] I disagree with the decision not to include statistical significance and instead point readers to the relevant papers; instead, it would be better to just state outright what is supported statistically, and what is simply an observed difference, e.g. “the mean of group A is higher than group B, but the groups do not differ in a statistically significant way.”
+
+[X] It seems that the bars in several of the results visualizations should be replaced by box, beeswarm, or violin plots to show the distribution. It is not immediately clear that the bars are showing the mean or median for each group; also, bar charts are best suited to counting rather than distribution data. This also applies to the results of study 3. The only time a bar chart seems appropriate would be where counting users; any kind of ‘score’ would be better represented by a distribution-type encoding.
+
+[X] In experimental group vs. self-reported trust in classification: if 1 is incomprehensible, the bars should not stretch down to 0. See above; box/beeswarm/violin would be a better representation here and eliminate the range issue altogether.
+
+[X] The use of a continuous scale (where ticks do not align to the rows) in the heat maps is confusing; a way to ‘hack’ the visualization to ensure only one tick appears for each box may be to format the tick values as strings
+
+[X] Check tenses, especially in ‘Anatomy of a Study’, to ensure the tense is consistent.
+
+[X] The educational intervention designed for the first study is informative and interesting; might be worth including in the main text body! I almost missed it in the sidebar.
+
+[X] By the time I had finished reading and playing the game, I had forgotten what “Erewhonians” were, and thought at first that I was missing a mycological vocabulary term. Some kind of callback to the sci-fi reference from the beginning would be helpful for us forgetful folks.
+
+[X] In the results of study 3, consider renaming ’selected’ to ‘picked up’ for greater clarity (assuming that is what is meant by the true/false values)
+
+
+[1] https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
+[2] http://gendershades.org/overview.html
+[3] https://arxiv.org/abs/1707.08945
+[4] https://www.dair-institute.org/blog/letter-statement-March2023/
+[5] https://dl.acm.org/doi/10.1145/3442188.3445922
+[7] https://ieeexplore.ieee.org/document/8634261
+[8] https://trexvis.github.io/Workshop2022/
+[9] https://www.technologyreview.com/2023/05/30/1073680/how-to-talk-about-ai-even-if-you-dont-know-much-about-ai/
