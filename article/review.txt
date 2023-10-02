@@ -8,7 +8,7 @@
 
 [X] I found the use of “AI’s suggestion” to be an odd phrasing; the model is making a prediction, or has an output, but ‘suggestion’ seems to be somewhat anthropomorphizing, and mischaracterizes the output (given that the output is not an action like “eat this mushroom” but rather a classification of “edible”). See [9]
 
-[ ] I disagree with the decision not to include statistical significance and instead point readers to the relevant papers; instead, it would be better to just state outright what is supported statistically, and what is simply an observed difference, e.g. “the mean of group A is higher than group B, but the groups do not differ in a statistically significant way.”
+[X] I disagree with the decision not to include statistical significance and instead point readers to the relevant papers; instead, it would be better to just state outright what is supported statistically, and what is simply an observed difference, e.g. “the mean of group A is higher than group B, but the groups do not differ in a statistically significant way.”
 
 [X] It seems that the bars in several of the results visualizations should be replaced by box, beeswarm, or violin plots to show the distribution. It is not immediately clear that the bars are showing the mean or median for each group; also, bar charts are best suited to counting rather than distribution data. This also applies to the results of study 3. The only time a bar chart seems appropriate would be where counting users; any kind of ‘score’ would be better represented by a distribution-type encoding.
 

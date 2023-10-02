@@ -584,8 +584,8 @@
       Vice versa, <em>undertrusting</em> an AI can lead to poor decisions for tasks at which the AI actually performs
       well (and there are more and more applications where AI can achieve superhuman performance <d-cite
         key="brown_superhuman_2019,mirhoseini_graph_2021"></d-cite>).
-      As a result, the main goal of XAI in relation to trust must be <em>trust calibration</em>, which means bringing
-      about an adequate level of user trust.
+      As a consequence, the main goal of XAI in relation to trust must be <em>trust calibration</em>, which means
+      bringing about an adequate level of user trust.
       Enabling proper trust calibration for future applications requires an improved understanding of the effects
       of existing techniques on user trust.
     </p>
@@ -995,8 +995,8 @@
       These are quite a bit more rigorous than what you would usually see in a visualization or ML paper with user
       studies.
       The interactive plotting tool below lets you explore different aspects of our results.
-      The main result was that additional explanations (the XAI kind) help users to make more correct decisions,
-      while the education intervention had no effect.
+      The main result was that additional explanations (the XAI kind) help users to make statistically significantly
+      more correct decisions, while the education intervention had no significant effect.
       All the detailed results can be found <a href="https://doi.org/10.1016/j.chb.2022.107539">in the paper</a> <d-cite
         key="leichtmann_effects_2023"></d-cite>.
     </p>
@@ -1006,9 +1006,10 @@
           <h4>Explore the Data from the First Study</h4>
           <p>
             The widget to the right lets you plot different attributes of our dataset collected from the first study.
-            You can select attributes for the x-axis and the y-axis, resulting in either bar charts (for categorical
-            attributes on the x-axis) or heatmaps (for numerical ones).
-            Here are some suggestions (click on the links to automatically jump to these settings):
+            You can select attributes for the <i>x</i>-axis and the <i>y</i>-axis. For categorical attributes on the
+            <i>x</i>-axis, means and standard deviations are shown for <i>y</i>. For numerical attributes on both axes,
+            2D histograms are shown. Here are some suggestions (click on the links to automatically jump to these
+            settings):
           </p>
           <ul>
             <li>
@@ -1030,11 +1031,11 @@
           <p>
             Can you find some other interesting relationships?
           </p>
-          <figcaption>
+          <!-- <figcaption>
             <b>Caution!</b> These plots do not indicate if the results are statistically significant. For the detailed
             analysis, <a href="https://doi.org/10.1016/j.chb.2022.107539">check the paper</a> <d-cite
               key="leichtmann_explainable_2023"></d-cite>.
-          </figcaption>
+          </figcaption> -->
         </div>
         <div class="d-flex flex-column" style="width: 460px;">
           <div id='study-1-plot' style="margin-top: 0px;"></div>
@@ -1158,7 +1159,7 @@
         </div>
         <div class="d-flex justify-content-center">
           <figcaption style="margin-top: 10px;">
-            Short version of the mushroom hunting game implemented for the festival study.
+            Shortened version of the mushroom hunting game originally implemented for the festival study.
           </figcaption>
         </div>
       </div>
@@ -1261,7 +1262,7 @@
     <p>
       With the new data from the festival, we could reproduce the main result from our first study.
       Participants who got the XAI interface, again, performed better in terms of classification correctness than
-      participants who got the plain interface.
+      participants who got the plain interface&mdash;and this effect was statistically significant again.
       However, we could not reproduce some of our results regarding self-reported trust and rating of the app.
       <a href="https://doi.org/10.1080/10447318.2023.2221605">In our paper</a>, you can find a detailed discussion of
       these results and their implications <d-cite key="leichtmann_effects_2023"></d-cite>.
@@ -1352,7 +1353,7 @@
 
     <p>
       In our third study, we divided our participants into four groups. Each group received one of the four
-      layout variants shown above. But there was one more thing we wanted to explore in our study ...
+      layout variants shown above. But there was one more thing we wanted to explore in our study &hellip;
     </p>
 
     <h3 id="study-3-align">Something's Awry</h3>
@@ -1387,9 +1388,9 @@
       Nearest neighbors and our new semantic explanations seemed to be particularly effective in the cases that we
       hypothesized to be most &ldquo;helpful&rdquo; (i.e., reassuring explanations for correct AI predictions, and
       concerning ones for incorrect predictions).
-      In the widget below, you can explore the participant responses for different item subgroups.
-      Detailed results are presented <a href="https://doi.org/10.31219/osf.io/h6dwz">in our preprint</a> <d-cite
-        key="humer_reassuring_2023"></d-cite>.
+      In addition to these statistically significant results, we present a number of exploratory analysis results <a
+        href="https://doi.org/10.31219/osf.io/h6dwz">in our preprint</a> <d-cite key="humer_reassuring_2023"></d-cite>.
+      In the widget below, you can explore how participants performed in the pick-up task for different item subgroups.
     </p>
     <figure class="fullscreen-diagram">
       <div class="d-flex flex-row justify-content-center align-items-center">
@@ -1411,13 +1412,14 @@
                 alt="Explanation raises concerns icon" />)</span>.
             The two rightmost columns of the table show how many participants assumed the mushroom to be edible and how
             many picked it up, respectively.
-            The bar chart in the top left of the widget shows the average correctness of the pick-up decision faceted by
-            the four experimental groups and by the selection in the table.
+            The chart in the top left of the widget shows the correctness of the pick-up decision faceted by
+            the four experimental groups and by the selection in the table. The average pick-up scores are indicated by
+            the dots and the standard deviations by the lines.
           </p>
           <p>
             Clicking on the button in the head of a row facets the results by the value of that row. For example, if you
-            click <a id="s3-incorrect">&ldquo;AI correctness&rdquo;</a>, one bar for each group will show the
-            correctness for only the mushroom items with an incorrect AI prediction, and one bar for the items with
+            click <a id="s3-incorrect">&ldquo;AI correctness&rdquo;</a>, one mark for each group will show the
+            correctness for only the mushroom items with an incorrect AI prediction, and one mark for the items with
             correct AI predictions.
             Hover over the image thumbnails to view the <em>Forestly</em> screens that the control group saw.
             Hovering over XAI icons <span class="no-wrap">(<img class="inline-icon" src="./images/icon-xai-aligned.png"
@@ -1433,11 +1435,11 @@
               incorrect AI prediction</a>, and notice how much higher the correctness was for those items for the
             nearest-neighbor group.
           </p>
-          <figcaption>
+          <!-- <figcaption>
             <b>Caution!</b> This plot does not indicate if the results are statistically significant. For the detailed
             analysis, <a href="https://doi.org/10.31219/osf.io/h6dwz">check the preprint</a> <d-cite
               key="humer_reassuring_2023"></d-cite>.
-          </figcaption>
+          </figcaption> -->
         </div>
         <div class="d-flex flex-column" style="width: 55%">
           <div id="study-3-plot"></div>
