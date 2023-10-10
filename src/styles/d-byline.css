@@ -38,7 +38,7 @@ d-byline .byline {
 
 d-byline .authors-affiliations {
   grid-column-end: span 2;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   margin-bottom: 1em;
 }
 
