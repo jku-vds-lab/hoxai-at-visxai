@@ -1,0 +1,14 @@
+{
+  "name": "b0cfd08fe215d80d",
+  "main": "b0cfd08fe215d80d@2044.js",
+  "version": "2044.0.0",
+  "homepage": "https://observablehq.com/d/b0cfd08fe215d80d",
+  "author": {
+    "name": "infovis2023",
+    "url": "https://observablehq.com/@infovis2023"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
