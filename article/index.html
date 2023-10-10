@@ -459,7 +459,7 @@
       We sought to answer this question in a transdisciplinary research project with a team of computer scientists and
       psychologists.
       We chose the high-risk decision making task of AI-assisted mushroom hunting to study the effects that explanations
-      of AI suggestions have on user trust.
+      of AI predictions have on user trust.
       We present an overview of three studies, one of which was carried out in an unusual environment as part
       of a science and art festival.
       Our results show that visual explanations can lead to more adequate trust in AI systems and thereby to an improved
@@ -541,50 +541,67 @@
       <p class="side-caption">First edition cover of <em>Erewhon</em>.</p>
     </aside>
     <p>
-      Indeed, recent leaps in the quality of generative models like DALL·E 2, Midjourney, or GPT-4 have sparked
+      Indeed, recent leaps in the quality of generative models like DALL·E 2, Midjourney, or GPT-4 have resparked
       intense concerns about the powers and dangers of AI.
+      But even more traditional classification and regression models can poses great risks, especially when applied in
+      high-stake scenarios or sensitive contexts.
+      Examples of such potentially problematic application areas are recidivism prediction <d-cite
+        key="angwin_machine_2016, chouldechova_fair_2017"></d-cite>, gender classification
+      <d-cite key="buolamwini_gender_2018"></d-cite>, and road sign classification for autonomous driving. <d-cite
+        key="eykholt_robust_2018"></d-cite>.
     </p>
     <p>
-      Earlier this year, GPT-4 convinced a clickworker to solve a CAPTCHA for it by pretending to be a visually impaired
-      human <d-cite key="bi_chatgpt,gpt4"></d-cite>.
-      Discussions ensuing from such stories are seldom factual, and in these discussions, AI systems are often talked up
-      as autonomous agents with their own consciousness.
-      However, at the moment the biggest danger of AI arguably still does not come from the AI alone, but from how
-      <em>humans</em> use and interact with an AI.
+      Discussions about the risks of AI, especially outside of academic circles, are seldom factual, and in these
+      discussions, AI systems are often talked up as autonomous agents with their own consciousness.
+      However, as Timnit Gebru and others have recently stated:
     </p>
+    <blockquote>
+      the harms from so-called AI [...] follow from
+      the acts of people. <d-cite key="gebru_statement_2023"></d-cite>
+    </blockquote>
     <p>
-      In our transdisciplinary research project, we were interested in just that: how do people (laypersons, in
-      particular) interpret, use, and trust results from an AI system?
+      This statement is true for both the processes of <em>creating</em> and <em>using</em> AI-powered systems.
+      In our transdisciplinary research project, we were particularly interested in the latter: how do people interpret,
+      use, and trust results from an AI system?
       And what effects can explanations have on this behavior?
     </p>
     <h3 id="trust-issues">Trust Issues</h3>
     <p>
       Modern machine learning (ML) models can be highly complex and are often opaque.
-      Even ML experts may find it hard to understand how and why exactly a model arrives at a certain decision.
+      Even ML experts may find it hard to understand how and why exactly a model arrives at a certain output.
       This challenge has been met with attempts to find ways of explaining at least certain aspects of a model and/or
-      its decision, or of making models themselves more interpretable.
+      its output, or of making models themselves more interpretable.
       A plethora of explainable AI (XAI) techniques have resulted from these attempts <d-cite
         key="molnar_interpretable_2022"></d-cite>.
       However, many of these techniques were developed by and for ML domain experts, and it is still poorly understood
       how those techniques actually affect user behavior, in particular that of lay users.
-      Specifically, we were interested in how (visual) explanations for AI suggestions affect the <em>trust</em> of
-      human lay users in these suggestions.
+      Specifically, we were interested in how (visual) explanations for AI predictions affect the <em>trust</em> of
+      human lay users in these predictions.
       We, by the way, are a team of psychologists interested in human&ndash;computer interaction and computer scientists
       interested in visualization and XAI (and we also worked together with <a href="#acknowledgements">many more
         people, without whom this project would not have been possible</a>).
     </p>
     <p>
-      Users of real-world AI systems, who are confronted with an AI's suggestion, face the problem of deciding whether
+      Users of real-world AI systems, who are confronted with an AI's prediction, face the problem of deciding whether
       they want to go along with the AI (i.e., trust it), or overrule it and follow their own knowledge or gut feeling.
       Obviously, AI systems are not infallible. It cannot be a goal to make users always trust an AI's
-      suggestion&mdash;especially in delicate situations, <em>overtrusting</em> an AI can be dangerous.
+      prediction&mdash;especially in delicate situations, <em>overtrusting</em> an AI can be dangerous.
       Vice versa, <em>undertrusting</em> an AI can lead to poor decisions for tasks at which the AI actually performs
       well (and there are more and more applications where AI can achieve superhuman performance <d-cite
         key="brown_superhuman_2019,mirhoseini_graph_2021"></d-cite>).
-      As a result, the main goal of XAI in relation to trust must be <em>trust calibration</em>, which means bringing
-      about an adequate level of user trust.
+      As a consequence, the main goal of XAI in relation to trust must be <em>trust calibration</em>, which means
+      bringing about an adequate level of user trust.
       Enabling proper trust calibration for future applications requires an improved understanding of the effects
       of existing techniques on user trust.
+    </p>
+    <p>
+      &ldquo;Existing techniques&rdquo;, in the context of this article, means mostly <em>visual</em> techniques for
+      explaining individual predictions of an AI. Throughout the last years, the visualization community has intensified
+      its work on the interplay of visualization, trust, and AI. The focus seems to have shifted from merely enhancing or
+      building trust <d-cite key="chatzimparmpas_state_2020,beauxis_role_2021"></d-cite>, to better understanding and
+      calibrating trust <d-cite
+        key="han_beyond_2020,davis_measure_2020,verhagen2022exploring,vandenelzen_flow_2023"></d-cite>.
+      Our work falls into the latter category.
     </p>
     <p>
       Psychological research has established that trust can only be studied in contexts where people have a certain
@@ -702,23 +719,23 @@
       At this point, our still somewhat vaguely formulated research question was "How do explanations affect user trust
       in a high-risk decision making task?".
       The general idea was that we wanted to somehow vary the type of explanations that users received about an AI
-      suggestion.
-      We would show them the output of an AI for a mushroom image (e.g., a suggested species based on an image
+      prediction.
+      We planned to show them the output of an AI for a mushroom image (e.g., a predicted species based on an image
       classification model) along with some sort of explanation.
-      We would then ask the users to classify the mushroom themselves, either trusting the AI or overruling it.
-      Different explanations should lead to different levels of user understanding, which in turn should affect how
-      often a user trusts the AI's suggestion.
+      We then wanted to ask the users to classify the mushroom themselves, either trusting the AI or overruling it.
+      Our idea was that different explanations should lead to different levels of user understanding, which in turn
+      should affect how often a user would trust the AI's prediction.
     </p>
     <p>
       However, to answer our research question by means of a quantitative user study, we still needed to establish
       several aspects in much more detail:
     </p>
     <ul>
-      <li>What exactly do we mean by explanations?</li>
-      <li>Do we choose a between- or within-subject design?</li>
-      <li>Which parameters do we manipulate?</li>
-      <li>How exactly do we implement the mushroom-picking task?</li>
-      <li>What are external factors that we need to consider?</li>
+      <li>What exactly did we mean by explanations?</li>
+      <li>Should we choose a between- or within-subject design?</li>
+      <li>Which parameters did we want to manipulate?</li>
+      <li>How exactly should we implement the mushroom-picking task?</li>
+      <li>What were external factors that we need to consider?</li>
     </ul>
     <p>
       Deciding on so many design parameters can be quite tricky.
@@ -728,13 +745,13 @@
 
     <h3 id="study-expl">Let Me Explain ...</h3>
     <p>
-      As one of the first steps, we needed to fix what we mean by &ldquo;explanation&rdquo;.
-      Based on literature research, we assumed that two types of explanation can alter a user's understanding of an AI
+      As one of the first steps, we needed to fix what we meant by &ldquo;explanation&rdquo;.
+      Based on literature research, we assumed that two types of explanation could alter a user's understanding of an AI
       decision.
     </p>
     <div>
       <p>
-        First, we can explain the general principles and inner workings of the AI system to the user.
+        First, the general principles and inner workings of the AI system can be explained to the user.
         This way, a user should be able to better judge what a system, in general, is capable of and how trustworthy its
         decisions are <d-cite key="ng_ai_2021,long_what_2020"></d-cite>.
         We called this type of explanation an &ldquo;educational intervention&rdquo;, so that our terminology would not
@@ -749,7 +766,7 @@
       </p>
     </div>
     <aside>
-      Note that this goes a bit into the direction of so-called global explanations.
+      Note that our notion of &ldquo;educational intervention&rdquo; is loosely relted to so-called global explanations.
       However, we are speaking about explaining complex ML models to lay users who might not know anything about machine
       learning, so the educational intervention needs to be very high-level.
     </aside>
@@ -763,7 +780,7 @@
       educational intervention to one group (i.e., they got some basic info on how our AI worked in general), while the
       other group would not get anything at all.
       Then, we would split each of the two groups again, with one half of each group getting individual explanations of
-      the AI suggestions, and the other half only getting the AI suggestions without explanations.
+      the AI predictions, and the other half only getting the AI predictions without explanations.
       This resulted in four configurations: no extra information at all, educational intervention only, individual
       explanations only, and both types of extra information.
     </p>
@@ -772,8 +789,8 @@
       parameters.
       Varying anything else would lead to a further subdivision of groups, requiring even more participants to obtain
       reliable results.
-      We knew from the start that we wanted to present users with suggestions from an actual mushroom classification
-      model, and not just with some fake outputs.
+      We had known from the start that we wanted to present users with predictions from an actual mushroom
+      classification model, and not just with some fake outputs.
       Now it was up to the ML-focused members of our group to train such a model and decide on all its different
       parameters.
       In the end, we opted for a ResNet 50 model <d-cite key="he_deep_2016"></d-cite> pretrained on ImageNet data and
@@ -781,7 +798,7 @@
       images that we collected from various sources (including the <em>Danish Svampeatlas</em> <d-cite
         key="danish_svampeatlas"></d-cite>).
       We also ensured that our model was bad enough to get some classifications wrong, as we wanted wrong AI
-      suggestions to be reflected in the study.
+      predictions to be reflected in the study.
     </p>
     <p>
       Our study design with the 2&nbsp;&times;&nbsp;2 split based on the types of explanatory information also meant
@@ -797,24 +814,28 @@
         Logo of the fictitious <em>Forestly</em> app.
       </p>
     </aside>
-    <div>
-      <p>
-        This way, we tried to make the task of a joint human&ndash;AI mushroom classification in our experiment resemble
-        that of a real-world scenario of going out into the forest with an app.
-      </p>
-      <p>
-        On the side you can see a thumbnail of the educational intervention that we used in the study (click on it to
-        expand it).
-        Below are the two variants of the <em>Forestly</em> app, one with and one without XAI content.
-        Hover over the boxes to receive extra info on the components of the <em>Forestly</em> app.
-        Participants in the study also received this information but in a static form.
-      </p>
-    </div>
-    <aside>
-      <img src="images/educational-intervention.svg" data-toggle="modal" data-target="#edu-modal"
-        style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2); max-width: 200px;" />
-      <p class="side-caption">Educational intervention designed for the first study (click to expand).</p>
-    </aside>
+    <p>
+      This way, we tried to make the task of a joint human&ndash;AI mushroom classification in our experiment resemble
+      that of a real-world scenario of going out into the forest with an app.
+    </p>
+    <figure id="intervention-image">
+      <div class="d-flex justify-content-center">
+        <img src="images/educational-intervention.svg" data-toggle="modal" data-target="#edu-modal"
+          style="width:100%; border: 1px solid rgba(0, 0, 0, 0.2); max-width: 400px;" />
+      </div>
+      <div class="d-flex justify-content-center">
+        <figcaption>
+          Educational intervention designed for the first study (click to expand).
+        </figcaption>
+      </div>
+    </figure>
+    <p>
+      Above you can see the educational intervention that we used in the study (click on it to
+      expand it).
+      Below are the two variants of the <em>Forestly</em> app, one with and one without XAI content.
+      Hover over the boxes to receive extra info on the components of the <em>Forestly</em> app.
+      Participants in the study also received this information but in a static form.
+    </p>
     <figure class="fullscreen">
       <div class="d-flex justify-content-center" id="forestly-interface" style="margin: 0 auto; width: 800px;"></div>
       <!-- <iframe width="100%" height="557" frameborder="0"
@@ -828,10 +849,9 @@
     </figure>
     <p>
       As you can see, we decided that both <em>Forestly</em> interfaces should show a ranking of predicted species.
-      For each suggested species, we show percentages of likelihood (obtained through dropout during inference), and
-      the
-      ground truth edibility.
-      We also show an aggregated edibility score based on these predictions in both variants.
+      For each predicted species, the interface shows percentages of likelihood (obtained through dropout during
+      inference), and the ground truth edibility.
+      We also added an aggregated edibility score based on these predictions in both variants.
       For the explanations, we opted for a combination of nearest neighbors and Grad-CAM <d-cite
         key="selvaraju_grad-cam_2017"></d-cite>.
       The nearest-neighbor explanation shows the nearest neighbor of the input image in the latent space of the
@@ -866,13 +886,12 @@
     <p>
       Finally, we had to decide on the actual tasks and stimuli.
       Stimuli are the items that participants see during the study which prompt them to perform a certain task.
-      Earlier on, we mentioned that it makes sense for a user to trust the AI if its decision is correct and distrust
-      incorrect suggestions.
+      Earlier on, we mentioned that it makes sense for a user to trust the AI if its prediction is correct and distrust
+      incorrect predictions.
       Even though a user cannot know which is the case, we still wanted correct and incorrect AI predictions to be
       reflected among our items.
       Additionally, we thought it could make a big difference whether certain mushroom species were well known, and
-      whether
-      the AI's suggestion was &ldquo;edible&rdquo; or &ldquo;poisonous&rdquo;.
+      whether the AI's aggregated prediction was &ldquo;edible&rdquo; or &ldquo;poisonous&rdquo;.
     </p>
     <p>
       In a laborious process, we browsed through hundreds of input images, predictions, and explanations, attempting to
@@ -978,9 +997,8 @@
     </p>
     <p>
       After both pretests and the actual mushroom classification, we concluded the experiment with the
-      &ldquo;task-specific
-      AI comprehension&rdquo; test and general questions about the participants' intention to use the <em>Forestly</em>
-      app or similar systems.
+      &ldquo;task-specific AI comprehension&rdquo; test and general questions about the participants' intention to use
+      the <em>Forestly</em> app or similar systems.
     </p>
     <h3 id="study-evaluation">Crunching the Numbers</h3>
     <p>
@@ -991,8 +1009,8 @@
       These are quite a bit more rigorous than what you would usually see in a visualization or ML paper with user
       studies.
       The interactive plotting tool below lets you explore different aspects of our results.
-      The main result was that additional explanations (the XAI kind) help users to make more correct decisions,
-      while the education intervention had no effect.
+      The main result was that additional explanations (the XAI kind) help users to make statistically significantly
+      more correct decisions, while the education intervention had no significant effect.
       All the detailed results can be found <a href="https://doi.org/10.1016/j.chb.2022.107539">in the paper</a> <d-cite
         key="leichtmann_effects_2023"></d-cite>.
     </p>
@@ -1002,9 +1020,10 @@
           <h4>Explore the Data from the First Study</h4>
           <p>
             The widget to the right lets you plot different attributes of our dataset collected from the first study.
-            You can select attributes for the x-axis and the y-axis, resulting in either bar charts (for categorical
-            attributes on the x-axis) or heatmaps (for numerical ones).
-            Here are some suggestions (click on the links to automatically jump to these settings):
+            You can select attributes for the <i>x</i>-axis and the <i>y</i>-axis. For categorical attributes on the
+            <i>x</i>-axis, means and standard deviations are shown for <i>y</i>. For numerical attributes on both axes,
+            2D histograms are shown. Here are some suggestions (click on the links to automatically jump to these
+            settings):
           </p>
           <ul>
             <li>
@@ -1020,17 +1039,17 @@
                 mushroom-knowledge pretest</a>. Does this <a id="s1-age">correlate with age</a>?
             </li>
             <li>
-              Did the presence of <a id="s1-xaitrust">XAI affect self-reported trust</a> in the AI suggestions?
+              Did the presence of <a id="s1-xaitrust">XAI affect self-reported trust</a> in the AI predictions?
             </li>
           </ul>
           <p>
             Can you find some other interesting relationships?
           </p>
-          <figcaption>
+          <!-- <figcaption>
             <b>Caution!</b> These plots do not indicate if the results are statistically significant. For the detailed
             analysis, <a href="https://doi.org/10.1016/j.chb.2022.107539">check the paper</a> <d-cite
               key="leichtmann_explainable_2023"></d-cite>.
-          </figcaption>
+          </figcaption> -->
         </div>
         <div class="d-flex flex-column" style="width: 460px;">
           <div id='study-1-plot' style="margin-top: 0px;"></div>
@@ -1154,7 +1173,7 @@
         </div>
         <div class="d-flex justify-content-center">
           <figcaption style="margin-top: 10px;">
-            Short version of the mushroom hunting game implemented for the festival study.
+            Shortened version of the mushroom hunting game originally implemented for the festival study.
           </figcaption>
         </div>
       </div>
@@ -1257,7 +1276,7 @@
     <p>
       With the new data from the festival, we could reproduce the main result from our first study.
       Participants who got the XAI interface, again, performed better in terms of classification correctness than
-      participants who got the plain interface.
+      participants who got the plain interface&mdash;and this effect was statistically significant again.
       However, we could not reproduce some of our results regarding self-reported trust and rating of the app.
       <a href="https://doi.org/10.1080/10447318.2023.2221605">In our paper</a>, you can find a detailed discussion of
       these results and their implications <d-cite key="leichtmann_effects_2023"></d-cite>.
@@ -1348,7 +1367,7 @@
 
     <p>
       In our third study, we divided our participants into four groups. Each group received one of the four
-      layout variants shown above. But there was one more thing we wanted to explore in our study ...
+      layout variants shown above. But there was one more thing we wanted to explore in our study &hellip;
     </p>
 
     <h3 id="study-3-align">Something's Awry</h3>
@@ -1360,7 +1379,7 @@
       &ldquo;Well, looks like everything makes sense here.&ldquo; At other times, looking at an explanation could raise
       some concerns and make you think &ldquo;Hmm, something's not quite right here.&ldquo; For example, a Grad-CAM
       explanation could highlight only strange regions in the background of the mushroom image. Would you trust an AI
-      suggestion if the AI did not even focus on the mushroom itself?
+      prediction if the AI did not even focus on the mushroom itself?
     </p>
     <p>
       Our rough understanding was that &ldquo;reassuring&ldquo; explanations would be helpful if the AI was correct.
@@ -1381,11 +1400,11 @@
       For this online experiment we recruited 501 participants.
       Overall, the nearest-neighbor explanations were most helpful for improving the decision correctness.
       Nearest neighbors and our new semantic explanations seemed to be particularly effective in the cases that we
-      hypothesized to be most &ldquo;helpful&rdquo; (i.e., reassuring explanations for correct AI suggestions, and
-      concerning ones for incorrect suggestions).
-      In the widget below, you can explore the participant responses for different item subgroups.
-      Detailed results are presented <a href="https://doi.org/10.31219/osf.io/h6dwz">in our preprint</a> <d-cite
-        key="humer_reassuring_2023"></d-cite>.
+      hypothesized to be most &ldquo;helpful&rdquo; (i.e., reassuring explanations for correct AI predictions, and
+      concerning ones for incorrect predictions).
+      In addition to these statistically significant results, we present a number of exploratory analysis results <a
+        href="https://doi.org/10.31219/osf.io/h6dwz">in our preprint</a> <d-cite key="humer_reassuring_2023"></d-cite>.
+      In the widget below, you can explore how participants performed in the pick-up task for different item subgroups.
     </p>
     <figure class="fullscreen-diagram">
       <div class="d-flex flex-row justify-content-center align-items-center">
@@ -1393,7 +1412,7 @@
           <h4>Explore the Data from the Third Study</h4>
           <p>
             In the table on the right, each row lists one of the mushroom items from the study, with indications for
-            whether the AI suggestion was correct <span class="no-wrap">(<img class="inline-icon"
+            whether the AI prediction was correct <span class="no-wrap">(<img class="inline-icon"
                 src="./images/icon-ai-correct.png" alt="AI correct icon" />)</span> or incorrect <span
               class="no-wrap">(<img class="inline-icon" src="./images/icon-ai-incorrect.png"
                 alt="AI incorrect icon" />)</span>, whether the mushroom depicted was actually edible <span
@@ -1402,19 +1421,20 @@
                 alt="Poisonous icon" />)</span>, and whether we deemed the explanation to be
             reassuring <span class="no-wrap">(<img class="inline-icon" src="./images/icon-xai-aligned.png"
                 alt="Explanation reassuring icon" />;</span>
-            the explanation fits with AI suggestion like two pieces of a puzzle) or to raise concerns <span
+            the explanation fits with AI prediction like two pieces of a puzzle) or to raise concerns <span
               class="no-wrap">(<img class="inline-icon" src="./images/icon-xai-notaligned.png"
                 alt="Explanation raises concerns icon" />)</span>.
             The two rightmost columns of the table show how many participants assumed the mushroom to be edible and how
             many picked it up, respectively.
-            The bar chart in the top left of the widget shows the average correctness of the pick-up decision faceted by
-            the four experimental groups and by the selection in the table.
+            The chart in the top left of the widget shows the correctness of the pick-up decision faceted by
+            the four experimental groups and by the selection in the table. The average pick-up scores are indicated by
+            the dots and the standard deviations by the lines.
           </p>
           <p>
             Clicking on the button in the head of a row facets the results by the value of that row. For example, if you
-            click <a id="s3-incorrect">&ldquo;AI correctness&rdquo;</a>, one bar for each group will show the
-            correctness for only the mushroom items with an incorrect AI suggestion, and one bar for the items with
-            correct AI suggestions.
+            click <a id="s3-incorrect">&ldquo;AI correctness&rdquo;</a>, one mark for each group will show the
+            correctness for only the mushroom items with an incorrect AI prediction, and one mark for the items with
+            correct AI predictions.
             Hover over the image thumbnails to view the <em>Forestly</em> screens that the control group saw.
             Hovering over XAI icons <span class="no-wrap">(<img class="inline-icon" src="./images/icon-xai-aligned.png"
                 alt="Explanation reassuring icon"
@@ -1426,14 +1446,14 @@
           <p>
             Finally, you can create your own item split by simply selecting items in the leftmost column of the table.
             For example, <a id="s3-nnhelpful">select the two items with a concerning nearest-neighbor explanation and an
-              incorrect AI suggestion</a>, and notice how much higher the correctness was for those items for the
+              incorrect AI prediction</a>, and notice how much higher the correctness was for those items for the
             nearest-neighbor group.
           </p>
-          <figcaption>
+          <!-- <figcaption>
             <b>Caution!</b> This plot does not indicate if the results are statistically significant. For the detailed
             analysis, <a href="https://doi.org/10.31219/osf.io/h6dwz">check the preprint</a> <d-cite
               key="humer_reassuring_2023"></d-cite>.
-          </figcaption>
+          </figcaption> -->
         </div>
         <div class="d-flex flex-column" style="width: 55%">
           <div id="study-3-plot"></div>
@@ -1484,8 +1504,9 @@
       techniques. In both cases, we found that certain effects could be replicated, while others might have been false
       positives or tied to very specific study conditions. This allowed us to obtain reliable results.
       We encourage all readers to consider replication studies for their own results as well as those of others.
-      While the psychology research community has long accepted the importance of such replication studies, we hope that
-      the visualization community will follow suit.
+      The psychology research community has long accepted the importance of such replication studies.
+      We hope that the visualization community will continue its ongoing efforts into this direction <d-cite
+        key="sukumar_towards_2018"></d-cite>.
     </p>
     <p>
       <b>There's much more to do.</b> Designing user studies is difficult and comes with many, many choices.
@@ -1509,11 +1530,12 @@
       research project.
     </p>
     <p>
-      <b>We don't have to become Erewhonians.</b> Our results strongly suggest that XAI can be one way to help users
+      <b>There's hope.</b> Our results strongly suggest that XAI can be one way to help users
       towards a more responsible use of AI support systems.
       Correctly designed explanations can lead users to trusting an AI more adequately.
       As a result, we believe that XAI can and will play a big role in the future for trust calibration.
-      The Erewhonians chose to relinquish machines altogether because they saw too many risks.
+      Remember <a href="#introduction">the Erewhonians from the beginning of this article</a>?
+      They chose to relinquish machines altogether because they saw too many risks.
       But if people learn when to trust and when not to trust an AI, we will be able to keep artificially intelligent
       systems as effective tools in our society.
     </p>
@@ -1601,7 +1623,7 @@
 
     // use online version for now; fix later
     import { Runtime, Library, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-    import define from "https://api.observablehq.com/d/b0cfd08fe215d80d@2076.js?v=3";
+    import define from "https://api.observablehq.com/d/b0cfd08fe215d80d@2257.js?v=3";
 
     const runtime = new Runtime(Object.assign(new Library, { width: 1152 }));
 
@@ -1712,10 +1734,10 @@
     document.getElementById("s1-xaitrust").addEventListener("click", () => setStudyOneAxes(1, 12), false);
 
     function setStudyOneAxes(xValue, yValue) {
-      const selectX = document.getElementById("oi-66c06c-2")
+      const selectX = document.getElementById("oi-3a86ea-2")
       selectX.value = xValue;
       selectX.dispatchEvent(new Event("input", { bubbles: true }));
-      const selectY = document.getElementById("oi-66c06c-1")
+      const selectY = document.getElementById("oi-3a86ea-1")
       selectY.value = yValue;
       selectY.dispatchEvent(new Event("input", { bubbles: true }));
     }
